@@ -12,7 +12,8 @@ public class layout2_1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout2_1);
-        Button point = (Button)findViewById(R.id.point);
+
+       Button point = (Button)findViewById(R.id.point);
         point.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -22,6 +23,15 @@ public class layout2_1 extends AppCompatActivity {
             }
         });
 
+       Button search =(Button)findViewById(R.id.search);
+        search.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(layout2_1.this,PokemonGon.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }
