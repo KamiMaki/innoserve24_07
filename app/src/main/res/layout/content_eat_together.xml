@@ -8,4 +8,13 @@
     tools:context=".EatTogether1_1"
     tools:showIn="@layout/app_bar_eat_together">
 
+    <Button
+        android:id="@+id/beacon"
+        android:layout_width="67dp"
+        android:layout_height="81dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.953"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </android.support.constraint.ConstraintLayout>

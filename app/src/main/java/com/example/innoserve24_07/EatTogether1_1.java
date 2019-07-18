@@ -1,5 +1,8 @@
 package com.example.innoserve24_07;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +16,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
+import android.widget.Button;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -52,7 +56,37 @@ public class EatTogether1_1 extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+
+        Button beacon = (Button)findViewById(R.id.beacon);
+        beacon.setVisibility(View.VISIBLE);
+        beacon.setBackgroundColor(Color.TRANSPARENT);
+        beacon.setOnClickListener(listener);
     }
+    private Button.OnClickListener listener=new Button.OnClickListener(){
+        @Override
+        public void onClick(View v){
+
+            if(v.getId()==R.id.beacon){
+                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+
+                builder.setTitle("打卡成功!!")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("今天依然健康呢!")
+                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+
+
+                        })
+                        .show();
+
+
+            }
+        }
+    };
 
     @Override
     public void onBackPressed() {
