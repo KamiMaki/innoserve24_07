@@ -18,7 +18,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        bt1=(Button)findViewById(R.id.bt1);
         bt2 = (Button)findViewById(R.id.bt2);
+
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,EatTogether1_1.class);
+                startActivity(intent);
+            }
+        });
 
        bt2.setOnClickListener(new View.OnClickListener() {
             @Override

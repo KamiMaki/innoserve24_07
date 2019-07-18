@@ -14,13 +14,27 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 
-public class EatTogether extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+
+public class EatTogether1_1 extends AppCompatActivity
+        implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
+
+    GoogleMap map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eat_together);
+
+        SupportMapFragment mapFragment=(SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        mapFragment.getMapAsync(this);
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
@@ -95,5 +109,14 @@ public class EatTogether extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        map=googleMap;
+
+        LatLng A=new LatLng(120,25);
+        map.addMarker(new MarkerOptions().position(A).title("Taiwan"));
+        map.moveCamera((CameraUpdateFactory.newLatLng(A)));
     }
 }
