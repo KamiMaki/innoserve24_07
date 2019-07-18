@@ -2,6 +2,7 @@ package com.example.innoserve24_07;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -45,8 +46,9 @@ public class EatTogether1_1 extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent = new Intent();
+                intent.setClass(EatTogether1_1.this,EatTogether1_1_add_activity.class);
+                startActivity(intent);
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -56,37 +58,8 @@ public class EatTogether1_1 extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-
-
-        Button beacon = (Button)findViewById(R.id.beacon);
-        beacon.setVisibility(View.VISIBLE);
-        beacon.setBackgroundColor(Color.TRANSPARENT);
-        beacon.setOnClickListener(listener);
     }
-    private Button.OnClickListener listener=new Button.OnClickListener(){
-        @Override
-        public void onClick(View v){
 
-            if(v.getId()==R.id.beacon){
-                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-
-                builder.setTitle("打卡成功!!")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("今天依然健康呢!")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-
-
-                        })
-                        .show();
-
-
-            }
-        }
-    };
 
     @Override
     public void onBackPressed() {

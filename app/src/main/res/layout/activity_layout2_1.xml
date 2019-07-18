@@ -8,9 +8,10 @@
 
     <Button
         android:id="@+id/search"
-        android:layout_width="178dp"
-        android:layout_height="177dp"
+        android:layout_width="172dp"
+        android:layout_height="154dp"
         android:text="search"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.025"
@@ -20,25 +21,27 @@
 
     <Button
         android:id="@+id/ar"
-        android:layout_width="196dp"
-        android:layout_height="178dp"
+        android:layout_width="158dp"
+        android:layout_height="158dp"
         android:text="AR"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.925"
+        app:layout_constraintHorizontal_bias="0.934"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.43" />
 
     <Button
         android:id="@+id/point"
-        android:layout_width="181dp"
-        android:layout_height="166dp"
+        android:layout_width="168dp"
+        android:layout_height="152dp"
         android:text="點數"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.026"
+        app:layout_constraintHorizontal_bias="0.023"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.753" />
+        app:layout_constraintVertical_bias="0.706" />
 </android.support.constraint.ConstraintLayout>
