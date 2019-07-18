@@ -11,6 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity
+            android:name=".EatTogether"
+            android:label="@string/title_activity_eat_together"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".webview_bot" />
         <activity android:name=".MainActivity">
             <intent-filter>
