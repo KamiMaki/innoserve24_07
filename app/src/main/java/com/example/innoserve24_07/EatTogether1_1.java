@@ -18,18 +18,41 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 public class EatTogether1_1 extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
+        implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback ,GoogleMap.OnMarkerClickListener{
 
     GoogleMap map;
+    //平鎮區所有活動中心
+    private static final LatLng PingChen1 = new LatLng(24.922596, 121.244921);
+    private Marker mPingChen1;
+    private static final LatLng PingChen2 = new LatLng(24.910730, 121.232426);
+    private Marker mPingChen2;
+    private static final LatLng PingChen3 = new LatLng(24.928368, 121.225914);
+    private Marker mPingChen3;
+    private static final LatLng PingChen4 = new LatLng(24.937601, 121.225295);
+    private Marker mPingChen4;
+    private static final LatLng PingChen5 = new LatLng(24.942486, 121.221168);
+    private Marker mPingChen5;
+    private static final LatLng PingChen6 = new LatLng(24.892994, 121.202910);
+    private Marker mPingChen6;
+    private static final LatLng PingChen7 = new LatLng(24.900090, 121.214187 );
+    private Marker mPingChen7;
+    private static final LatLng PingChen8 = new LatLng(24.892936, 121.202642 );
+    private Marker mPingChen8;
+    private static final LatLng PingChen9 = new LatLng(24.955200, 121.189572);
+    private Marker mPingChen9;
+    private static final LatLng PingChen10 = new LatLng(24.951171, 121.206371 );
+    private Marker mPingChen10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -122,8 +145,71 @@ public class EatTogether1_1 extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
 
-        LatLng A=new LatLng(120,25);
-        map.addMarker(new MarkerOptions().position(A).title("Taiwan"));
-        map.moveCamera((CameraUpdateFactory.newLatLng(A)));
+        mPingChen1 = map.addMarker(new MarkerOptions()
+                .position(PingChen1));
+        mPingChen2 = map.addMarker(new MarkerOptions()
+                .position(PingChen2));
+        mPingChen3 = map.addMarker(new MarkerOptions()
+                .position(PingChen3));
+        mPingChen4 = map.addMarker(new MarkerOptions()
+                .position(PingChen4));
+        mPingChen5 = map.addMarker(new MarkerOptions()
+                .position(PingChen5));
+        mPingChen6 = map.addMarker(new MarkerOptions()
+                .position(PingChen6));
+        mPingChen7 = map.addMarker(new MarkerOptions()
+                .position(PingChen7));
+        mPingChen8 = map.addMarker(new MarkerOptions()
+                .position(PingChen8));
+        mPingChen9 = map.addMarker(new MarkerOptions()
+                .position(PingChen9));
+        mPingChen10 = map.addMarker(new MarkerOptions()
+                .position(PingChen10));
+        map.setOnMarkerClickListener(this);
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+        if (marker.equals(mPingChen1))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen2))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen3))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen4))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen5))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen6))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen7))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen8))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen9))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen10))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+        }
+        return false;
     }
 }
