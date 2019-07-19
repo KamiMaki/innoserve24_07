@@ -1,7 +1,9 @@
 package com.example.innoserve24_07;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,6 +13,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import java.util.Calendar;
 
@@ -18,6 +21,8 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
     private EditText editDate;
     private Button dateButton;
     private TextView dateText;
+    private TextView listText;
+    private Button listButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +57,14 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
             }
 
         });
+        listButton = (Button)findViewById(R.id.listButton);
+        listText=(TextView) findViewById(R.id.listText);
+        listButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myListAlertDialog();
+            }
+        });
     }
     public void datePicker(View v){
         Calendar calendar= Calendar.getInstance();
@@ -66,6 +79,43 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
             }
         },year,month,day).show();
     }
+    AlertDialog myListAlertDialog;
+    private void myListAlertDialog() {
+        final String[] ListStr = { "未分類", "日記", "生活", "旅遊", "美食" };
+        AlertDialog.Builder MyListAlertDialog = new AlertDialog.Builder(this);
+        MyListAlertDialog.setTitle("標題");
+        // 建立List的事件
+        DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                /*Toast.makeText(EatTogether1_1_add_activity.this, ListStr[which],// 顯示所點選的選項
+                        Toast.LENGTH_LONG).show();*/
+                listText.setText(ListStr[which]);
 
+            }
+        };
+        // 建立按下取消什麼事情都不做的事件
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        };
+        MyListAlertDialog.setItems(ListStr, ListClick);
+        MyListAlertDialog.setNeutralButton("取消", OkClick);
+        MyListAlertDialog.show();
+    }
+
+    AlertDialog myDialog;//listdialog
+    private void showAlert()
+    {
+        AlertDialog.Builder myBuilder=new AlertDialog.Builder(this);
+        final CharSequence[] nebulae={"Boomerang","Onion"};
+        myBuilder.setTitle("list").setItems(nebulae, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int position) {
+                    Toast.makeText(EatTogether1_1_add_activity.this,nebulae[position].toString(),Toast.LENGTH_LONG).show();
+            }
+        });
+        myDialog=myBuilder.create();
+        myDialog.show();
+    }
 
 }
