@@ -172,7 +172,7 @@ public class PokemonGon extends FragmentActivity
         mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 15));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 13));
         map.setOnMarkerClickListener(this);
     }
 

@@ -1,16 +1,44 @@
 package com.example.innoserve24_07;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 
 public class bg extends AppCompatActivity {
 
+    Button bm;
+    Button bb;
+    Button bq;
+    Button bh;
+    Button bw;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bg);
 
+        bm=(Button)findViewById(R.id.bm);
+        bb=(Button)findViewById(R.id.bb);
+        bq=(Button)findViewById(R.id.bq);
+        bh=(Button)findViewById(R.id.bh);
+        bw=(Button)findViewById(R.id.bw);
 
+        bm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(bg.this,bg4_1medicine.class);
+                startActivity(intent);
+            }
+        });
+        bb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(bg.this,bg4_2buy.class);
+                startActivity(intent);
+            }
+        });
     }
 }
