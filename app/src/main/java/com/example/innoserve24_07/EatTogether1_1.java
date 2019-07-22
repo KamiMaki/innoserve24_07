@@ -24,6 +24,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -176,7 +177,6 @@ public class EatTogether1_1 extends AppCompatActivity
         mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8));
         mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9));
         mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen2, 13));
         mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1));
         mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2));
         mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3));
@@ -198,7 +198,7 @@ public class EatTogether1_1 extends AppCompatActivity
         mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)));
         mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 15));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 13));
         map.setOnMarkerClickListener(this);
     }
 
