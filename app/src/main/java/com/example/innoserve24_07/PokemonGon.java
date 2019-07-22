@@ -135,7 +135,6 @@ public class PokemonGon extends FragmentActivity
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
-
         mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)));
         mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)));
         mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)));
@@ -174,7 +173,6 @@ public class PokemonGon extends FragmentActivity
         mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 15));
-
         map.setOnMarkerClickListener(this);
     }
 
