@@ -53,27 +53,6 @@ public class EatTogether1_1 extends AppCompatActivity
     private Marker mPingChen9;
     private static final LatLng PingChen10 = new LatLng(24.951171, 121.206371 );
     private Marker mPingChen10;
-    //龍潭區
-    private static final LatLng LungTan1 = new LatLng(24.845209, 121.153220 );
-    private Marker mLungTan1;
-    private static final LatLng LungTan2 = new LatLng(24.882359, 121.195308 );
-    private Marker mLungTan2;
-    private static final LatLng LungTan3 = new LatLng(24.881135, 121.212040 );
-    private Marker mLungTan3;
-    private static final LatLng LungTan4 = new LatLng(24.868270, 121.215471 );
-    private Marker mLungTan4;
-    private static final LatLng LungTan5 = new LatLng(24.864885, 121.217324 );
-    private Marker mLungTan5;
-    private static final LatLng LungTan6 = new LatLng(24.864500, 121.225853 );
-    private Marker mLungTan6;
-    private static final LatLng LungTan7 = new LatLng(24.875568, 121.228132 );
-    private Marker mLungTan7;
-    private static final LatLng LungTan8 = new LatLng(24.840931, 121.232381 );
-    private Marker mLungTan8;
-    private static final LatLng LungTan9 = new LatLng(24.842218, 121.241571 );
-    private Marker mLungTan9;
-    private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
-    private Marker mLungTan10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -167,6 +146,9 @@ public class EatTogether1_1 extends AppCompatActivity
         map=googleMap;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of abe6b9f... dot
         mPingChen1 = map.addMarker(new MarkerOptions()
                 .position(PingChen1));
         mPingChen2 = map.addMarker(new MarkerOptions()
@@ -188,7 +170,6 @@ public class EatTogether1_1 extends AppCompatActivity
         mPingChen10 = map.addMarker(new MarkerOptions()
                 .position(PingChen10));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen2, 13));
-=======
         mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1));
         mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2));
         mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3));
@@ -212,6 +193,8 @@ public class EatTogether1_1 extends AppCompatActivity
 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 15));
 >>>>>>> abe6b9fc9cf99ac0aa3c3ddb4dda82b74975d0ff
+=======
+>>>>>>> parent of abe6b9f... dot
         map.setOnMarkerClickListener(this);
     }
 
@@ -256,10 +239,6 @@ public class EatTogether1_1 extends AppCompatActivity
         if (marker.equals(mPingChen10))
         {
             myAlertDialog();
-        }
-        if (marker.equals(mLungTan1))
-        {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
         }
         return false;
 
