@@ -53,6 +53,27 @@ public class EatTogether1_1 extends AppCompatActivity
     private Marker mPingChen9;
     private static final LatLng PingChen10 = new LatLng(24.951171, 121.206371 );
     private Marker mPingChen10;
+    //龍潭區
+    private static final LatLng LungTan1 = new LatLng(24.845209, 121.153220 );
+    private Marker mLungTan1;
+    private static final LatLng LungTan2 = new LatLng(24.882359, 121.195308 );
+    private Marker mLungTan2;
+    private static final LatLng LungTan3 = new LatLng(24.881135, 121.212040 );
+    private Marker mLungTan3;
+    private static final LatLng LungTan4 = new LatLng(24.868270, 121.215471 );
+    private Marker mLungTan4;
+    private static final LatLng LungTan5 = new LatLng(24.864885, 121.217324 );
+    private Marker mLungTan5;
+    private static final LatLng LungTan6 = new LatLng(24.864500, 121.225853 );
+    private Marker mLungTan6;
+    private static final LatLng LungTan7 = new LatLng(24.875568, 121.228132 );
+    private Marker mLungTan7;
+    private static final LatLng LungTan8 = new LatLng(24.840931, 121.232381 );
+    private Marker mLungTan8;
+    private static final LatLng LungTan9 = new LatLng(24.842218, 121.241571 );
+    private Marker mLungTan9;
+    private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
+    private Marker mLungTan10;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +166,7 @@ public class EatTogether1_1 extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
 
+<<<<<<< HEAD
         mPingChen1 = map.addMarker(new MarkerOptions()
                 .position(PingChen1));
         mPingChen2 = map.addMarker(new MarkerOptions()
@@ -166,6 +188,30 @@ public class EatTogether1_1 extends AppCompatActivity
         mPingChen10 = map.addMarker(new MarkerOptions()
                 .position(PingChen10));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen2, 13));
+=======
+        mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1));
+        mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2));
+        mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3));
+        mPingChen4 = map.addMarker(new MarkerOptions().position(PingChen4));
+        mPingChen5 = map.addMarker(new MarkerOptions().position(PingChen5));
+        mPingChen6 = map.addMarker(new MarkerOptions().position(PingChen6));
+        mPingChen7 = map.addMarker(new MarkerOptions().position(PingChen7));
+        mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8));
+        mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9));
+        mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10));
+        mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)));
+        mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)));
+        mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)));
+        mLungTan4=map.addMarker((new MarkerOptions().position(LungTan4)));
+        mLungTan5=map.addMarker((new MarkerOptions().position(LungTan5)));
+        mLungTan6=map.addMarker((new MarkerOptions().position(LungTan6)));
+        mLungTan7=map.addMarker((new MarkerOptions().position(LungTan7)));
+        mLungTan8=map.addMarker((new MarkerOptions().position(LungTan8)));
+        mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)));
+        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)));
+
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 15));
+>>>>>>> abe6b9fc9cf99ac0aa3c3ddb4dda82b74975d0ff
         map.setOnMarkerClickListener(this);
     }
 
@@ -210,6 +256,10 @@ public class EatTogether1_1 extends AppCompatActivity
         if (marker.equals(mPingChen10))
         {
             myAlertDialog();
+        }
+        if (marker.equals(mLungTan1))
+        {
+            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
         }
         return false;
 
