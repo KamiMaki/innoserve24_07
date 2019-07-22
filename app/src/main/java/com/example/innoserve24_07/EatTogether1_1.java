@@ -165,6 +165,7 @@ public class EatTogether1_1 extends AppCompatActivity
                 .position(PingChen9));
         mPingChen10 = map.addMarker(new MarkerOptions()
                 .position(PingChen10));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen2, 13));
         map.setOnMarkerClickListener(this);
     }
 
@@ -172,44 +173,61 @@ public class EatTogether1_1 extends AppCompatActivity
     public boolean onMarkerClick(Marker marker) {
         if (marker.equals(mPingChen1))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen2))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen3))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen4))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen5))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen6))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen7))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen8))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen9))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         if (marker.equals(mPingChen10))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            myAlertDialog();
         }
         return false;
+
+    }
+    private void myAlertDialog() {
+        AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
+        MyAlertDialog.setTitle("標題");
+        MyAlertDialog.setMessage("我是內容");
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // 如果不做任何事情 就會直接關閉 對話方塊
+            }
+        };
+        ;
+        MyAlertDialog.setNeutralButton("我要參加", OkClick);
+        MyAlertDialog.setPositiveButton("   關閉", OkClick);
+        MyAlertDialog.setNegativeButton("我感興趣    ", OkClick);
+        MyAlertDialog.show();
+
     }
 }

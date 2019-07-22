@@ -61,16 +61,8 @@ public class layout2_1_point_market extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
 
                             }
-
-                            /*public void onClick(View view) {
-                                Intent intent = new Intent();
-                                intent.setClass(layout2_1_point_market.this,layout2_1_point_market_fake.class);
-                                startActivity(intent);
-                            }*/
                         })
                         .show();
-
-
             }
             if(v.getId()==R.id.water){
                 point-=70;
