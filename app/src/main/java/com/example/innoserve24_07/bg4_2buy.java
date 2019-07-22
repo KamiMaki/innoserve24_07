@@ -35,12 +35,7 @@ public class bg4_2buy extends AppCompatActivity {
                 builder.setTitle("維骨力")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("100天購買一次\n下次購買時間：12月5日")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
             }
             if(view.getId()==R.id.bt2)
@@ -50,12 +45,7 @@ public class bg4_2buy extends AppCompatActivity {
                 builder.setTitle("奶粉")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("20天購買一次\n下次購買時間：11月15日")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
             }
             if(view.getId()==R.id.bt3)
@@ -65,12 +55,7 @@ public class bg4_2buy extends AppCompatActivity {
                 builder.setTitle("假牙清潔錠")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("60天購買一次\n下次購買時間：11月13日")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
             }
         }

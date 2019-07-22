@@ -56,12 +56,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 builder.setTitle("請示出條碼")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("池上米:30點")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
             }
             if(v.getId()==R.id.water){
@@ -71,12 +66,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 builder.setTitle("請示出條碼")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("水壺:70點")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
 
             }
@@ -87,12 +77,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 builder.setTitle("請示出條碼")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("醬油:50點")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
 
             }
@@ -103,12 +88,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 builder.setTitle("請示出條碼")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("衛生紙:10點")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
 
             }
