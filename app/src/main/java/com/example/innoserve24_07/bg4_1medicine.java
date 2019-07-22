@@ -36,12 +36,7 @@ public class bg4_1medicine extends AppCompatActivity {
                 builder.setTitle("糖尿病藥")
                     .setIcon(R.mipmap.ic_launcher)
                     .setMessage("早上7點\n中午12點30分\n晚上6點")
-                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    })
+                        .setNegativeButton("關閉", null)
                     .show();
             }
             if(view.getId()==R.id.bt2)
@@ -51,12 +46,7 @@ public class bg4_1medicine extends AppCompatActivity {
                 builder.setTitle("心臟病藥")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("早上7點")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
             }
             if(view.getId()==R.id.bt3)
@@ -66,12 +56,7 @@ public class bg4_1medicine extends AppCompatActivity {
                 builder.setTitle("感冒藥")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("早上9點\n晚上9點")
-                        .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("關閉", null)
                         .show();
             }
         }

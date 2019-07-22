@@ -122,12 +122,7 @@ public class PokemonGon extends FragmentActivity
                 builder.setTitle("打卡成功!!")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("今天依然健康呢!")
-                        .setPositiveButton("太好了", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-
-                            }
-                        })
+                        .setNegativeButton("太好了", null)
                         .show();
             }
         }
