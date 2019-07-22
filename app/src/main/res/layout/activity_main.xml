@@ -8,49 +8,53 @@
 
     <Button
         android:id="@+id/bt1"
-        android:layout_width="202dp"
-        android:layout_height="303dp"
-        android:text="揪"
+        android:layout_width="153dp"
+        android:layout_height="147dp"
+        android:text="招作伙"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.004"
+        app:layout_constraintHorizontal_bias="0.089"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.205" />
+        app:layout_constraintVertical_bias="0.28" />
 
     <Button
         android:id="@+id/bt2"
-        android:layout_width="203dp"
-        android:layout_height="297dp"
-        android:text="解鎖阿公阿麼"
+        android:layout_width="152dp"
+        android:layout_height="147dp"
+        android:text="趴趴造"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.942"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.216" />
+        app:layout_constraintVertical_bias="0.281" />
 
     <Button
         android:id="@+id/bt3"
-        android:layout_width="212dp"
-        android:layout_height="299dp"
-        android:text="醫療諮詢"
+        android:layout_width="151dp"
+        android:layout_height="145dp"
+        android:text="委蝦密"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.005"
+        app:layout_constraintHorizontal_bias="0.088"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.699" />
 
     <Button
         android:id="@+id/bt4"
-        android:layout_width="193dp"
-        android:layout_height="289dp"
-        android:text="BG"
+        android:layout_width="160dp"
+        android:layout_height="144dp"
+        android:text="柑仔店"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.898" />
+        app:layout_constraintVertical_bias="0.698" />
 </android.support.constraint.ConstraintLayout>
