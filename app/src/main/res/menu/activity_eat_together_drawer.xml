@@ -2,9 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
-
-
-
     <item android:title="活動">
         <menu>
             <item
@@ -22,7 +19,7 @@
             <item
                 android:id="@+id/nav_tools"
                 android:icon="@drawable/ic_menu_manage"
-                android:title="@string/menu_tools" />
+                android:title="活動的回憶" />
 
         </menu>
     </item>
