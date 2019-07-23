@@ -206,7 +206,7 @@ public class EatTogether1_1 extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }//
+    }
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
