@@ -4,44 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
     tools:context=".layout2_1">
 
-    <Button
-        android:id="@+id/search"
-        android:layout_width="172dp"
-        android:layout_height="154dp"
-        android:text="search"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.025"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.11" />
 
-    <Button
-        android:id="@+id/ar"
-        android:layout_width="158dp"
-        android:layout_height="158dp"
-        android:text="AR"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.934"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.43" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/point"
-        android:layout_width="168dp"
-        android:layout_height="152dp"
-        android:text="點數"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.023"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706" />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="175dp"
+                android:layout_height="100dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="15dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/ar"
+                    android:layout_width="175dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/cam"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv3"
+                android:layout_width="225dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/rcam" />
+
+            <Space
+                android:layout_width="175dp"
+                android:layout_height="100dp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <Button
+                    android:id="@+id/point"
+                    android:layout_width="175dp"
+                    android:layout_height="150dp"
+                    android:background="@drawable/searchhh"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/iv1"
+                    android:layout_width="175dp"
+                    android:layout_height="50dp"
+                    app:srcCompat="@drawable/stamps" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="175dp"
+                android:layout_height="250dp" />
+
+            <Button
+                android:id="@+id/search"
+                android:layout_width="175dp"
+                android:layout_height="150dp"
+                android:background="@drawable/w111"
+                android:textSize="24sp" />
+
+            <ImageView
+                android:id="@+id/iv2"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
+                app:srcCompat="@drawable/explore" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
 </android.support.constraint.ConstraintLayout>
