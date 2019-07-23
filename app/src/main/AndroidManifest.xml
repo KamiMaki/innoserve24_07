@@ -25,7 +25,6 @@
         <activity android:name=".bg" />
         <activity android:name=".EatTogether1_1_add_activity" />
         <activity android:name=".PokemonGon" />
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />

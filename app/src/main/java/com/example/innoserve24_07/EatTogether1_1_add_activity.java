@@ -81,7 +81,9 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
     }
     AlertDialog myListAlertDialog;
     private void myListAlertDialog() {
-        final String[] ListStr = { "未分類", "日記", "生活", "旅遊", "美食" };
+        final String[] ListStr = { "東社社區活動中心", "東勢社區活動中心", "獅子林社區活動中心", "北興社區活動中心", "北勢社區活動中心",
+        "山峰社區活動中心","山峰社區長壽俱樂部","山子頂社區活動中心","高連社區活動中心","廣隆社區活動中心", "黃唐社區活動中心","佳安社區活動中心",
+                "九龍社區活動中心","中山社區活動中心","烏林社區活動中心","八德社區活動中心","三和社區活動中心","三水社區活動中心","高平社區活動中心","上林社區活動中心"};
         AlertDialog.Builder MyListAlertDialog = new AlertDialog.Builder(this);
         MyListAlertDialog.setTitle("標題");
         // 建立List的事件
