@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 public class bg extends AppCompatActivity {
 
@@ -17,7 +18,7 @@ public class bg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bg);
-
+        final EditText mPhoneNoEt = (EditText) findViewById(R.id.et_phone_no);
         bm=(Button)findViewById(R.id.bm);
         bb=(Button)findViewById(R.id.bb);
         bq=(Button)findViewById(R.id.bq);

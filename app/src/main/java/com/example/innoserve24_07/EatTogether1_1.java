@@ -145,6 +145,9 @@ public class EatTogether1_1 extends AppCompatActivity
         if (id == R.id.accepted)
         {
 
+            Intent intent = new Intent();
+            intent.setClass(EatTogether1_1.this,EatTogether1_1_accepted.class);
+            startActivity(intent);
         }
         else if (id == R.id.interested)
         {
@@ -154,7 +157,18 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         else if (id == R.id.nav_slideshow)
         {
+            AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
 
+            builder.setTitle("以下是您主辦的活動")
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   陳奶奶\n                   杜爺爺\n\n總共:  4   人參加\n\n")
+                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+
+                        }
+                    })
+                    .show();
         }
         else if (id == R.id.nav_tools)
         {
@@ -173,12 +187,20 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         else if (id == R.id.nav_share)
         {
+            AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
 
-        }
-        else if (id == R.id.nav_send)
-        {
+            builder.setTitle("好友名單:")
+                    .setIcon(R.mipmap.ic_launcher)
+                    .setMessage("\n溫爺爺\n\n杜爺爺\n\n鄭奶奶\n\n陳奶奶\n")
+                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
 
+                        }
+                    })
+                    .show();
         }
+
 
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
