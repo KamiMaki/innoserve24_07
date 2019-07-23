@@ -46,7 +46,9 @@ public class MainActivity extends AppCompatActivity {
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = getPackageManager().getLaunchIntentForPackage("jp.naver.line.android");
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this,CHATBOT.class);
+                startActivity(intent);
             }
         });
 
