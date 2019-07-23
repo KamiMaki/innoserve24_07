@@ -14,26 +14,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-<<<<<<< HEAD
+
         <activity android:name=".CHATBOT"></activity>
         <activity android:name=".bg4_3question" />
         <activity android:name=".bg4_2buy" />
         <activity android:name=".EatTogether1_1_interested" />
-=======
-<<<<<<< HEAD
+
+
         <activity android:name=".EatTogether1_1_accepted_chatroom"></activity>
         <activity android:name=".EatTogether1_1_accepted" />
         <activity android:name=".EatTogether1_1_interested" />
         <activity android:name=".bg4_2buy" />
-=======
 
         <activity android:name=".bg4_3question"></activity>
         <activity android:name=".bg4_2buy" />
 
         <activity android:name=".EatTogether1_1_interested"></activity>
 
->>>>>>> 41434e1f003eb665588cd5b61beb060e5d130932
->>>>>>> b99244fee181eb25932ae0b16ae6e42ebc98dd38
+
         <activity android:name=".bg4_1medicine" />
         <activity android:name=".bg" />
         <activity android:name=".EatTogether1_1_add_activity" />

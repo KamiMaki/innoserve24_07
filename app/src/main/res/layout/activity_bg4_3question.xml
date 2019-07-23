@@ -28,7 +28,6 @@
                 android:layout_height="wrap_content"
                 android:text="預設問題\n"
                 android:textSize="32sp" />
-            TextView
             <TextView
                 android:id="@+id/textView01"
                 android:layout_width="match_parent"
@@ -79,15 +78,10 @@
     </ScrollView>
 
     <Button
-<<<<<<< HEAD
+
         android:id="@+id/bt6"
         android:layout_width="100dp"
         android:layout_height="60dp"
-=======
-        android:id="@+id/bt"
-        android:layout_width="90dp"
-        android:layout_height="73dp"
->>>>>>> b99244fee181eb25932ae0b16ae6e42ebc98dd38
         android:background="@drawable/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

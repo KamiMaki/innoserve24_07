@@ -43,21 +43,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-<<<<<<< HEAD
+
 
 
         bt3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,CHATBOT.class);
+                intent.setClass(MainActivity.this, CHATBOT.class);
                 startActivity(intent);
-=======
-        bt3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
->>>>>>> b99244fee181eb25932ae0b16ae6e42ebc98dd38
             }
         });
 
@@ -87,3 +82,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
