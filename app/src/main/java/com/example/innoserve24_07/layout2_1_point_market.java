@@ -43,11 +43,8 @@ public class layout2_1_point_market extends AppCompatActivity {
 
     }
     private Button.OnClickListener listener=new Button.OnClickListener(){
-        //LayoutInflater inflater = LayoutInflater.from(layout2_1_point_market.this);
-        //final View v = inflater.inflate(R.layout.code38, null);
         @Override
          public void onClick(View v){
-
             if(v.getId()==R.id.rice){
                 point-=30;
                 textView3.setText(Integer.toString(point));

@@ -13,8 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity android:name=".EatTogether1_1_interested"></activity>
+
         <activity android:name=".bg4_2buy"></activity>
         <activity android:name=".bg4_1medicine" />
+
         <activity android:name=".bg" />
         <activity android:name=".EatTogether1_1_add_activity" />
         <activity android:name=".PokemonGon" />
