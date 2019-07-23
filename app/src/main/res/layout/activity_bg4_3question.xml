@@ -7,41 +7,79 @@
     tools:context=".bg4_3question">
 
     <ScrollView
-        android:layout_width="395dp"
-        android:layout_height="715dp"
+        android:layout_width="348dp"
+        android:layout_height="549dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.746"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView30"
+                android:id="@+id/textView00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="預設問題\n"
+                android:textSize="32sp" />
+            TextView
+            <TextView
+                android:id="@+id/textView01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q1：今天是幾年幾月幾日?\nA：2019年8月24日\n"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView29"
+                android:id="@+id/textView02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Q2：今天是星期幾?\nA：今天是星期六\n"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView31"
+                android:id="@+id/textView03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="Q3：您的出生年月日?\nA：23年6月9日\n"
+                android:textSize="36sp"/>
+
+            <TextView
+                android:id="@+id/textView04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="自訂問題\n"
+                android:textSize="32sp"/>
+
+            <TextView
+                android:id="@+id/textView05"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q1：您的媽媽叫什麼名字?\nA：皮卡丘\n"
+                android:textSize="36sp"/>
+
+            <TextView
+                android:id="@+id/textView06"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q2：前任的總統是誰？\nA：馬英九"
+                android:textSize="36sp"/>
+
+            <TextView
+                android:id="@+id/textView07"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
         </LinearLayout>
     </ScrollView>
 
     <Button
-        android:id="@+id/bt6"
+        android:id="@+id/bt"
         android:layout_width="90dp"
         android:layout_height="73dp"
         android:background="@drawable/add"
@@ -51,5 +89,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.975" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="防老問題"
+        android:textSize="44sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
 
 </android.support.constraint.ConstraintLayout>
