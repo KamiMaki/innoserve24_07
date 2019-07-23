@@ -275,82 +275,102 @@ public class EatTogether1_1 extends AppCompatActivity
         if (marker.equals(mPingChen1))
         {
             myAlertDialog();
+            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen2))
         {
             myAlertDialog();
+            Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen3))
         {
             myAlertDialog();
+            Toast.makeText(this, "獅子林社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen4))
         {
             myAlertDialog();
+            Toast.makeText(this, "北興社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen5))
         {
             myAlertDialog();
+            Toast.makeText(this, "北勢社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen6))
         {
             myAlertDialog();
+            Toast.makeText(this, "山峰社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen7))
         {
             myAlertDialog();
+            Toast.makeText(this, "山峰社區長壽俱樂部", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen8))
         {
             myAlertDialog();
+            Toast.makeText(this, "山子頂社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen9))
         {
             myAlertDialog();
+            Toast.makeText(this, "高連社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mPingChen10))
         {
             myAlertDialog();
+            Toast.makeText(this, "廣隆社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan1))
         {
             myAlertDialog();
+            Toast.makeText(this, "黃唐社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan2))
         {
             myAlertDialog();
+            Toast.makeText(this, "佳安社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan3))
         {
             myAlertDialog();
+            Toast.makeText(this, "九龍社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan4))
         {
             myAlertDialog();
+            Toast.makeText(this, "中山社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan5))
         {
             myAlertDialog();
+            Toast.makeText(this, "烏林社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan6))
         {
             myAlertDialog();
+            Toast.makeText(this, "八德社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan7))
         {
             myAlertDialog();
+            Toast.makeText(this, "三和社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan8))
         {
             myAlertDialog();
+            Toast.makeText(this, "三水社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan9))
         {
             myAlertDialog();
+            Toast.makeText(this, "高平社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan10))
         {
             myAlertDialog();
+            Toast.makeText(this, "上林社區活動中心", Toast.LENGTH_LONG).show();
         }
         return false;
 
