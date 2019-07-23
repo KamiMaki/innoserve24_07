@@ -33,5 +33,14 @@ public class layout2_1 extends AppCompatActivity {
             }
         });
 
+        Button ar=(Button)findViewById(R.id.ar);
+         ar.setOnClickListener(new View.OnClickListener(){
+             @Override
+             public void onClick(View view) {
+
+                 Intent intent =getPackageManager().getLaunchIntentForPackage(("com.please.abc"));
+                 startActivity(intent);
+             }
+         });
     }
 }

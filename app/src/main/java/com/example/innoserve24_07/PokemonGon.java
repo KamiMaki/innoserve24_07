@@ -1,9 +1,14 @@
 package com.example.innoserve24_07;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Fragment;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.net.Uri;
+import android.os.Build;
 import android.support.v4.app.FragmentActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -113,22 +118,32 @@ public class PokemonGon extends FragmentActivity
         beacon.setVisibility(View.VISIBLE);
         beacon.setBackgroundColor(Color.TRANSPARENT);
         beacon.setOnClickListener(listener);
+        Button call = (Button)findViewById(R.id.call);
+        call.setVisibility(View.VISIBLE);
+        call.setBackgroundColor(Color.TRANSPARENT);
+        call.setOnClickListener(listener);
     }
     private Button.OnClickListener listener=new Button.OnClickListener(){
         @Override
         public void onClick(View v){
 
-            if(v.getId()==R.id.beacon){
+            if(v.getId()==R.id.beacon)
+            {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
-
                 builder.setTitle("打卡成功!!")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("今天依然健康呢!")
                         .setNegativeButton("太好了", null)
                         .show();
             }
+            if(v.getId()==R.id.call)
+            {
+                String phoneNum="0925837969";
+                callPhone(phoneNum);
+            }
         }
     };
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
@@ -242,5 +257,26 @@ public class PokemonGon extends FragmentActivity
             Toast.makeText(this, "全家龍潭武漢店", Toast.LENGTH_LONG).show();
         }
         return false;
+    }
+    public void callPhone(String phoneNum){
+
+        //android6版本获取动态权限
+        if (Build.VERSION.SDK_INT >= 23) {
+            int REQUEST_CODE_CONTACT = 101;
+            String[] permissions = {Manifest.permission.CALL_PHONE};
+            //验证是否许可权限
+            for (String str : permissions) {
+                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                    //申请权限
+                    this.requestPermissions(permissions, REQUEST_CODE_CONTACT);
+                    return;
+                }
+            }
+        }
+        //如果需要手动拨号将Intent.ACTION_CALL改为Intent.ACTION_DIAL（跳转到拨号界面，用户手动点击拨打）
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        Uri data = Uri.parse("tel:" + phoneNum);
+        intent.setData(data);
+        startActivity(intent);
     }
 }
