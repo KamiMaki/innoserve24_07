@@ -12,6 +12,9 @@ import android.widget.ImageButton;
 public class EatTogether1_1_interested extends AppCompatActivity {
 
     Button par;
+    Button par2;
+    Button par3;
+    Button par4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +39,72 @@ public class EatTogether1_1_interested extends AppCompatActivity {
 
             }
         });
+        par2=(Button)findViewById(R.id.par2);
+        par2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
+                builder.setTitle("陳奶奶來跳舞")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("您確定要參加嗎?")
+                        .setNegativeButton("不要參加", null)
+                        .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                accepted();
+                            }
+                        })
+                        .show();
+
+            }
+        });
+        par3=(Button)findViewById(R.id.par3);
+        par3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
+                builder.setTitle("杜爺爺泡茶")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("您確定要參加嗎?")
+                        .setNegativeButton("不要參加", null)
+                        .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                accepted();
+                            }
+                        })
+                        .show();
+
+            }
+        });
+        par4=(Button)findViewById(R.id.par4);
+        par4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
+                builder.setTitle("溫爺爺下棋")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("您確定要參加嗎?")
+                        .setNegativeButton("不要參加", null)
+                        .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                accepted();
+                            }
+                        })
+                        .show();
+
+            }
+        });
     }
 
-  
+
     private void accepted() {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
-        MyAlertDialog.setTitle("新活動");
+       // MyAlertDialog.setTitle("新活動");
         MyAlertDialog.setMessage("您已成功報名!");
         DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {

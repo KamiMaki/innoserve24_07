@@ -1,5 +1,4 @@
-﻿package com.example.innoserve24_07;
-
+package com.example.innoserve24_07;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -138,8 +137,6 @@ public class EatTogether1_1 extends AppCompatActivity
 
         return super.onOptionsItemSelected(item);
     }
-
-    @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
@@ -187,7 +184,6 @@ public class EatTogether1_1 extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
-
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
@@ -232,7 +228,6 @@ public class EatTogether1_1 extends AppCompatActivity
         mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8));
         mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9));
         mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10));
-
         mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)));
         mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)));
         mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)));
