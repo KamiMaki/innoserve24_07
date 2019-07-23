@@ -12,9 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
-        <Space
-            android:layout_width="15dp"
-            android:layout_height="match_parent" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +21,7 @@
 
             <Space
                 android:layout_width="175dp"
-                android:layout_height="30dp" />
+                android:layout_height="40dp" />
 
             <Button
                 android:id="@+id/bt1"
@@ -34,41 +32,40 @@
 
             <ImageView
                 android:id="@+id/imageView5"
-                android:layout_width="175dp"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/comeon" />
 
             <Space
                 android:layout_width="175dp"
-                android:layout_height="100dp" />
+                android:layout_height="75dp" />
 
             <Button
                 android:id="@+id/bt3"
                 android:layout_width="175dp"
-                android:layout_height="175dp"
+                android:layout_height="190dp"
                 android:background="@drawable/whywhy"
                 android:textSize="30sp" />
 
             <ImageView
                 android:id="@+id/imageView4"
-                android:layout_width="175dp"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/why" />
         </LinearLayout>
-        <Space
-            android:layout_width="30dp"
-            android:layout_height="match_parent"
-            android:gravity="center"/>
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
 
+            android:layout_gravity="right"
             android:orientation="vertical">
 
             <Space
                 android:layout_width="175dp"
-                android:layout_height="95dp" />
+                android:layout_height="105dp" />
 
             <Button
                 android:id="@+id/bt2"
@@ -79,8 +76,9 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="175dp"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/gogogo" />
 
             <Space
@@ -96,15 +94,13 @@
 
             <ImageView
                 android:id="@+id/imageView2"
-                android:layout_width="175dp"
+                android:layout_width="150dp"
                 android:layout_height="50dp"
+                android:layout_gravity="center"
                 app:srcCompat="@drawable/grocery" />
 
         </LinearLayout>
-        <Space
-            android:layout_width="15dp"
-            android:layout_height="match_parent"
-            android:gravity="right"/>
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

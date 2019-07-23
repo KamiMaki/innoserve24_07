@@ -1,8 +1,5 @@
 package com.example.innoserve24_07;
-<<<<<<< HEAD
 
-=======
->>>>>>> ac0e5a06ad3b1e87b5f6c34238e692359ffc5317
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
