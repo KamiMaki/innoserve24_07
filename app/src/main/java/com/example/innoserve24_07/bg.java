@@ -41,5 +41,13 @@ public class bg extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        bq.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(bg.this,bg4_3question.class);
+                startActivity(intent);
+            }
+        });
     }
 }

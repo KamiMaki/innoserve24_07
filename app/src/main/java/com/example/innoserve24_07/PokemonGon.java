@@ -29,38 +29,40 @@ public class PokemonGon extends FragmentActivity
         implements OnMapReadyCallback , GoogleMap.OnMarkerClickListener {
 
     GoogleMap map;
-    private static final LatLng LungTan1 = new LatLng(24.870765, 121.221829);
+    private static final LatLng LungTan1 = new LatLng(24.870541, 121.222465);
     private Marker mLungTan1;
     private static final LatLng LungTan2 = new LatLng(24.870172, 121.220379);
     private Marker mLungTan2;
     //便利商店，靠近1
-    private static final LatLng LungTan3 = new LatLng(24.868066, 121.216248);
+    private static final LatLng LungTan3 = new LatLng(24.867952, 121.215667);
     private Marker mLungTan3;
-    private static final LatLng LungTan4 = new LatLng(24.866479, 121.213920);
+    private static final LatLng LungTan4 = new LatLng(24.864634, 121.211069);
     private Marker mLungTan4;
     private static final LatLng LungTan5 = new LatLng(24.866450, 121.217117);
     private Marker mLungTan5;
     private static final LatLng LungTan6 = new LatLng(24.866167, 121.217450);
     private Marker mLungTan6;
-    private static final LatLng LungTan7 = new LatLng(24.865457, 121.219005);
+    private static final LatLng LungTan7 = new LatLng(24.866315, 121.216637);
     private Marker mLungTan7;
-    private static final LatLng LungTan8 = new LatLng(24.865184, 121.217600);
+    private static final LatLng LungTan8 = new LatLng(24.865963, 121.216760);
     private Marker mLungTan8;
-    private static final LatLng LungTan9 = new LatLng(24.865077, 121.221216);
+    private static final LatLng LungTan9 = new LatLng(24.865073, 121.217149);
     private Marker mLungTan9;
-    private static final LatLng LungTan10 = new LatLng(24.865778, 121.223233);
+    private static final LatLng LungTan10 = new LatLng(24.866536, 121.221891);
     private Marker mLungTan10;
-    private static final LatLng LungTan11= new LatLng(24.866751, 121.222428);
+    private static final LatLng LungTan11= new LatLng(24.865594, 121.222678);
     private Marker mLungTan11;
-    //便利商店，靠近2
-    private static final LatLng LungTan12 = new LatLng(24.870580, 121.223957);
+    private static final LatLng LungTan12 = new LatLng(24.864962, 121.222479);
     private Marker mLungTan12;
-    private static final LatLng LungTan13 = new LatLng(24.872495, 121.228300);
+    //便利商店，靠近2
+    private static final LatLng LungTan13 = new LatLng(24.870395, 121.223271);
     private Marker mLungTan13;
-    private static final LatLng LungTan14 = new LatLng(24.875279, 121.228215);
+    private static final LatLng LungTan14 = new LatLng(24.872288, 121.227715);
     private Marker mLungTan14;
-    private static final LatLng LungTan15 = new LatLng(24.873562, 121.231502);
+    private static final LatLng LungTan15 = new LatLng(24.873380, 121.231282);
     private Marker mLungTan15;
+    private static final LatLng LungTan16 = new LatLng(24.873695, 121.232599);
+    private Marker mLungTan16;
     //假人
     private static final LatLng LungTanPeople1 = new LatLng(24.874123, 121.236516);
     private Marker mLungTanPeole1;
@@ -70,9 +72,9 @@ public class PokemonGon extends FragmentActivity
     private Marker mLungTanPeole3;
     private static final LatLng LungTanPeople4 = new LatLng(24.867789, 121.220415);
     private Marker mLungTanPeole4;
-    private static final LatLng LungTanPeople5 = new LatLng(24.868958, 121.226542);
+    private static final LatLng LungTanPeople5 = new LatLng(24.865637, 121.212389);
     private Marker mLungTanPeole5;
-    private static final LatLng LungTanPeople6 = new LatLng(24.866000, 121.223125);
+    private static final LatLng LungTanPeople6 = new LatLng(24.866307, 121.214657);
     private Marker mLungTanPeole6;
     private static final LatLng LungTanPeople7 = new LatLng(24.867156, 121.221234);
     private Marker mLungTanPeole7;
@@ -160,6 +162,7 @@ public class PokemonGon extends FragmentActivity
         mLungTan13=map.addMarker((new MarkerOptions().position(LungTan13)));
         mLungTan14=map.addMarker((new MarkerOptions().position(LungTan14)));
         mLungTan15=map.addMarker((new MarkerOptions().position(LungTan15)));
+        mLungTan16=map.addMarker((new MarkerOptions().position(LungTan16)));
         mLungTanPeole1=map.addMarker(new MarkerOptions().position(LungTanPeople1).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mLungTanPeole2=map.addMarker(new MarkerOptions().position(LungTanPeople2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mLungTanPeole3=map.addMarker(new MarkerOptions().position(LungTanPeople3).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
@@ -182,7 +185,7 @@ public class PokemonGon extends FragmentActivity
         mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 13));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 18));
         map.setOnMarkerClickListener(this);
     }
 
@@ -191,7 +194,67 @@ public class PokemonGon extends FragmentActivity
 
         if (marker.equals(mLungTan1))
         {
-            Toast.makeText(this, "Toast 基本用法", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "龍潭區公所", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan2))
+        {
+            Toast.makeText(this, "龍潭衛生所", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan3))
+        {
+            Toast.makeText(this, "7-11 龍運門市", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan4))
+        {
+            Toast.makeText(this, "OK便利商店 龍潭龍元店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan5))
+        {
+            Toast.makeText(this, "OK便利商店 龍潭北龍店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan6))
+        {
+            Toast.makeText(this, "OK便利商店 龍潭龍華店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan7))
+        {
+            Toast.makeText(this, "全家便利商店 龍潭興龍店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan8))
+        {
+            Toast.makeText(this, "7-ELEVEN 龍政門市", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan9))
+        {
+            Toast.makeText(this, "全家便利商店 龍潭五福店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan10))
+        {
+            Toast.makeText(this, "全家便利商店 龍潭龍昌店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan11))
+        {
+            Toast.makeText(this, "7-ELEVEN 龍昌門市", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan12))
+        {
+            Toast.makeText(this, "7-ELEVEN 紹福門市", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan13))
+        {
+            Toast.makeText(this, "萊爾富便利商店 桃縣桃亮店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan14))
+        {
+            Toast.makeText(this, "7-ELEVEN 龍德門市", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan15))
+        {
+            Toast.makeText(this, "OK便利商店 龍潭武漢店", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mLungTan16))
+        {
+            Toast.makeText(this, "全家龍潭武漢店", Toast.LENGTH_LONG).show();
         }
         return false;
     }

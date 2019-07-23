@@ -1,4 +1,5 @@
 package com.example.innoserve24_07;
+
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -205,7 +206,7 @@ public class EatTogether1_1 extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
-    }
+    }//
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
