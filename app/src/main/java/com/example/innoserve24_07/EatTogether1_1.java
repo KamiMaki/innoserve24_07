@@ -34,7 +34,7 @@ public class EatTogether1_1 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback ,GoogleMap.OnMarkerClickListener{
 
     GoogleMap map;
-    //平鎮區所有活動中心
+    //平鎮區所有活動中心zz
     private static final LatLng PingChen1 = new LatLng(24.922596, 121.244921);
     private Marker mPingChen1;
     private static final LatLng PingChen2 = new LatLng(24.910730, 121.232426);
