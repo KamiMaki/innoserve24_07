@@ -1,6 +1,7 @@
 package com.example.innoserve24_07;
 
 import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -74,8 +75,26 @@ public class MainActivity extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("今天天氣晴\n溫度約27~30度")
                         .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("天氣好出去走走之餘\n要小心不要中暑喔!")
-                        .setNegativeButton("我知道了", null)
+                        .setMessage("\n天氣好出去走走之餘\n要小心不要中暑喔!")
+                        .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                                builder.setTitle("健康資訊")
+                                        .setIcon(R.mipmap.ic_launcher)
+                                        .setMessage("\n65歲以上長者免費肺炎鏈球菌疫苗接種\n\n您接種了嗎?\n\n相關資訊請洽委蝦密")
+                                        .setNegativeButton("我知道了", null)
+                                        .setPositiveButton("相關資訊", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                Intent intent = new Intent();
+                                                intent.setClass(MainActivity.this, CHATBOT.class);
+                                                startActivity(intent);
+                                            }
+                                        })
+                                        .show();
+                            }
+                        })
                         .show();
             }
         });

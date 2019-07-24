@@ -21,10 +21,6 @@ public class bg4_3question extends AppCompatActivity {
         public void onClick(View view) {
             if(view.getId()==R.id.bt){
 
-
-
-
-
             }
         }
     };

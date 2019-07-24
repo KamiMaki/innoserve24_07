@@ -46,47 +46,94 @@ public class layout2_1_point_market extends AppCompatActivity {
         @Override
          public void onClick(View v){
             if(v.getId()==R.id.rice){
-                point-=30;
-                textView3.setText(Integer.toString(point));
-                AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
-
-                builder.setTitle("請示出條碼")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("池上米:30點")
-                        .setNegativeButton("關閉", null)
-                        .show();
+                if(point>=30)
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                    builder.setTitle("請示出條碼")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setMessage("池上米:30點")
+                            .setNegativeButton("關閉", null)
+                            .show();
+                    point-=30;
+                    textView3.setText(Integer.toString(point));
+                }
+                else
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                    builder.setTitle("您的點數不夠!")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setMessage("\n\n請再多走走來集點吧!")
+                            .setNegativeButton("我知道了", null)
+                            .show();
+                }
             }
             if(v.getId()==R.id.water){
-                point-=70;
-                textView3.setText(Integer.toString(point));
-                AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
-                builder.setTitle("請示出條碼")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("水壺:70點")
-                        .setNegativeButton("關閉", null)
-                        .show();
+              if(point>=70)
+              {
+                  AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                  builder.setTitle("請示出條碼")
+                          .setIcon(R.mipmap.ic_launcher)
+                          .setMessage("水壺:70點")
+                          .setNegativeButton("關閉", null)
+                          .show();
+                  point-=70;
+                  textView3.setText(Integer.toString(point));
+              }
+              else
+              {
+                  AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                  builder.setTitle("您的點數不夠!")
+                          .setIcon(R.mipmap.ic_launcher)
+                          .setMessage("\n\n請再多走走來集點吧!")
+                          .setNegativeButton("我知道了", null)
+                          .show();
+              }
 
             }
             if(v.getId()==R.id.oil){
-                point-=50;
-                textView3.setText(Integer.toString(point));
-                AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
-                builder.setTitle("請示出條碼")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("醬油:50點")
-                        .setNegativeButton("關閉", null)
-                        .show();
+              if(point>=50)
+              {
+                  AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                  builder.setTitle("請示出條碼")
+                          .setIcon(R.mipmap.ic_launcher)
+                          .setMessage("醬油:50點")
+                          .setNegativeButton("關閉", null)
+                          .show();
+                  point-=50;
+                  textView3.setText(Integer.toString(point));
+              }
+              else
+              {
+                  AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                  builder.setTitle("您的點數不夠!")
+                          .setIcon(R.mipmap.ic_launcher)
+                          .setMessage("\n\n請再多走走來集點吧!")
+                          .setNegativeButton("我知道了", null)
+                          .show();
+              }
 
             }
             if(v.getId()==R.id.tissue){
-                point-=10;
-                textView3.setText(Integer.toString(point));
-                AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
-                builder.setTitle("請示出條碼")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("衛生紙:10點")
-                        .setNegativeButton("關閉", null)
-                        .show();
+                if(point>=10)
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                    builder.setTitle("請示出條碼")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setMessage("衛生紙:10點")
+                            .setNegativeButton("關閉", null)
+                            .show();
+                    point-=10;
+                    textView3.setText(Integer.toString(point));
+                }
+                else
+                {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
+                    builder.setTitle("您的點數不夠!")
+                            .setIcon(R.mipmap.ic_launcher)
+                            .setMessage("\n\n請再多走走來集點吧!")
+                            .setNegativeButton("我知道了", null)
+                            .show();
+                }
 
             }
         }
