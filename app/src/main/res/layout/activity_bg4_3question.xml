@@ -64,7 +64,7 @@
                 android:textSize="36sp"/>
 
             <TextView
-                android:id="@+id/textView06"
+                android:id="@+id/tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Q2：前任的總統是誰？\nA：馬英九"
