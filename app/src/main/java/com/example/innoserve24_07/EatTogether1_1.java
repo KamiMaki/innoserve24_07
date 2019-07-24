@@ -244,14 +244,11 @@ public class EatTogether1_1 extends AppCompatActivity
     public boolean onMarkerClick(Marker marker) {
         if (marker.equals(mPingChen1))
         {
-           /*if(flag==0)
-=======
-            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
->>>>>>> a1c69d3e9424e77de3ebe32b3f228eef2385f9b1
                 myAlertDialog();
-            else*/
+            else
                 mmyAlertDialog();
+            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
 
         if (marker.equals(mPingChen2))
