@@ -74,6 +74,13 @@
                     android:text="緊急連絡人電話"
                     android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="22sp" />
+
+                <EditText
+                    android:id="@+id/et_phone_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName" />
             </LinearLayout>
 
             <LinearLayout
@@ -175,12 +182,6 @@
                     android:background="@drawable/togglebutton_selector"
                     android:textSize="0dp" />
 
-                <EditText
-                    android:id="@+id/et_phone_no"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textPersonName" />
             </LinearLayout>
 
         </LinearLayout>

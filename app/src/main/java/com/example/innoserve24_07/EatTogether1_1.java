@@ -76,7 +76,8 @@ public class EatTogether1_1 extends AppCompatActivity
     private Marker mLungTan9;
     private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
     private Marker mLungTan10;
-    int flag=0;
+
+    int flag =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,11 +93,10 @@ public class EatTogether1_1 extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                flag=1;
                 Intent intent = new Intent();
                 intent.setClass(EatTogether1_1.this,EatTogether1_1_add_activity.class);
                 startActivity(intent);
-                flag=1;
-
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -244,12 +244,13 @@ public class EatTogether1_1 extends AppCompatActivity
     public boolean onMarkerClick(Marker marker) {
         if (marker.equals(mPingChen1))
         {
-            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
                 mmyAlertDialog();
+            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
+
         if (marker.equals(mPingChen2))
         {
             Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
@@ -322,57 +323,161 @@ public class EatTogether1_1 extends AppCompatActivity
             else
                 mmyAlertDialog();
 
+            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen2))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen3))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "獅子林社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen4))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "北興社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen5))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "北勢社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen6))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "山峰社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen7))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "山峰社區長壽俱樂部", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen8))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "山子頂社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen9))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "高連社區活動中心", Toast.LENGTH_LONG).show();
+        }
+        if (marker.equals(mPingChen10))
+        {
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
+            Toast.makeText(this, "廣隆社區活動中心", Toast.LENGTH_LONG).show();
+
         }
 
 
         if (marker.equals(mLungTan1))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "黃唐社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan2))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "佳安社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan3))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "九龍社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan4))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "中山社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan5))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "烏林社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan6))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "八德社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan7))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "三和社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan8))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "三水社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan9))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "高平社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan10))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "上林社區活動中心", Toast.LENGTH_LONG).show();
         }
         return false;
