@@ -31,9 +31,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent();
-                intent.setClass(EatTogether1_1_add_activity.this,EatTogether1_1.class);
-                startActivity(intent);
+                EatTogether1_1_add_activity.this.finish();
             }
         });
         editDate=(EditText)findViewById(R.id.editDate);

@@ -244,11 +244,11 @@ public class EatTogether1_1 extends AppCompatActivity
     public boolean onMarkerClick(Marker marker) {
         if (marker.equals(mPingChen1))
         {
+            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
                 mmyAlertDialog();
-            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
 
         if (marker.equals(mPingChen2))
@@ -325,80 +325,6 @@ public class EatTogether1_1 extends AppCompatActivity
 
             Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
-        if (marker.equals(mPingChen2))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen3))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "獅子林社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen4))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "北興社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen5))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "北勢社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen6))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "山峰社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen7))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "山峰社區長壽俱樂部", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen8))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "山子頂社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen9))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "高連社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen10))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-            Toast.makeText(this, "廣隆社區活動中心", Toast.LENGTH_LONG).show();
-
-        }
-
 
         if (marker.equals(mLungTan1))
         {
