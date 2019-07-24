@@ -1,5 +1,6 @@
 package com.example.innoserve24_07;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -13,13 +14,13 @@ public class bg4_3question extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bg4_3question);
-        bt=(Button)findViewById(R.id.bt);
-        bt.setOnClickListener(listener);
+        bt=(Button)findViewById(R.id.bt6);
+       // bt.setOnClickListener(listener);
     }
-    private Button.OnClickListener listener= new Button.OnClickListener() {
+    /*private Button.OnClickListener listener= new Button.OnClickListener() {
         @Override
         public void onClick(View view) {
-            if(view.getId()==R.id.bt){
+            if(view.getId()==R.id.bt6){
 
 
 
@@ -27,5 +28,5 @@ public class bg4_3question extends AppCompatActivity {
 
             }
         }
-    };
+    };*/
 }
