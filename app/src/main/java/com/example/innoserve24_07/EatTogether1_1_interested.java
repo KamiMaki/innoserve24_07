@@ -28,13 +28,13 @@ public class EatTogether1_1_interested extends AppCompatActivity {
                 builder.setTitle("鄭奶奶揪吃飯")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("您確定要參加嗎?")
-                        .setNegativeButton("不要參加", null)
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
                             @Override
-                            public void onClick(DialogInterface dialog, int which) {
+                               public void onClick(DialogInterface dialog, int which) {
                                 accepted();
                             }
                         })
+                        .setNeutralButton("不要參加",null)
                         .show();
 
             }

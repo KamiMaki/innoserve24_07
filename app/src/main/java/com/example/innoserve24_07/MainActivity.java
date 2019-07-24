@@ -83,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
                                 builder.setTitle("健康資訊")
                                         .setIcon(R.mipmap.ic_launcher)
                                         .setMessage("\n65歲以上長者免費肺炎鏈球菌疫苗接種\n\n您接種了嗎?\n\n相關資訊請洽委蝦密")
-                                        .setNegativeButton("我知道了", null)
+                                        .setNeutralButton("我知道了",null)
                                         .setPositiveButton("相關資訊", new DialogInterface.OnClickListener() {
                                             @Override
                                             public void onClick(DialogInterface dialog, int which) {
@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
                                                 startActivity(intent);
                                             }
                                         })
+
                                         .show();
                             }
                         })
