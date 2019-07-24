@@ -434,9 +434,28 @@ public class EatTogether1_1 extends AppCompatActivity
             }
         };
         ;
-        MyAlertDialog.setNeutralButton("我要參加", OkClick);
-        MyAlertDialog.setPositiveButton("   關閉", OkClick);
+        MyAlertDialog.setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                accepted();
+            }
+        });
+        MyAlertDialog.setNeutralButton("   關閉", OkClick);
         MyAlertDialog.setNegativeButton("我感興趣    ", OkClick);
+        MyAlertDialog.show();
+
+    }
+    private void accepted() {
+        AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
+        // MyAlertDialog.setTitle("新活動");
+        MyAlertDialog.setMessage("您已成功報名!");
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // 如果不做任何事情 就會直接關閉 對話方塊
+            }
+        };
+        ;
+        //MyAlertDialog.setPositiveButton("   關閉", OkClick);
         MyAlertDialog.show();
 
     }
