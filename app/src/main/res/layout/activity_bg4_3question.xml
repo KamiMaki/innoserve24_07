@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/back3"
     tools:context=".bg4_3question">
 
     <ScrollView
-        android:layout_width="348dp"
+        android:layout_width="0dp"
         android:layout_height="549dp"
         android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -23,55 +24,60 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/textView00"
+                android:id="@+id/q0"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="預設問題\n"
-                android:textSize="32sp" />
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="44sp" />
+
             <TextView
-                android:id="@+id/textView01"
+                android:id="@+id/q1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q1：今天是幾年幾月幾日?\nA：2019年8月24日\n"
+                android:text="Q：今天是幾年幾月幾日?\nA：2019年8月24日\n"
                 android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView02"
+                android:id="@+id/q2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q2：今天是星期幾?\nA：今天是星期六\n"
+                android:text="Q：今天是星期幾?\nA：今天是星期六\n"
                 android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView03"
+                android:id="@+id/q3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q3：您的出生年月日?\nA：23年6月9日\n"
-                android:textSize="36sp"/>
+                android:text="Q：您的出生年月日?\nA：23年6月9日\n"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView04"
+                android:id="@+id/q4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="自訂問題\n"
-                android:textSize="32sp"/>
+                android:textAlignment="center"
+                android:textColor="#3F51B5"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView05"
+                android:id="@+id/q5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q1：您的媽媽叫什麼名字?\nA：皮卡丘\n"
-                android:textSize="36sp"/>
+                android:text="Q：您的媽媽叫什麼名字?\nA：皮卡丘\n"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/tv"
+                android:id="@+id/q6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q2：前任的總統是誰？\nA：馬英九"
-                android:textSize="36sp"/>
+                android:text="Q：前任的總統是誰？\nA：馬英九"
+                android:textSize="36sp" />
 
             <TextView
-                android:id="@+id/textView07"
+                android:id="@+id/q7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </LinearLayout>
@@ -95,6 +101,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="防老問題"
+        android:textColor="#000000"
         android:textSize="44sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
