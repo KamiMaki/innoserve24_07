@@ -29,6 +29,9 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 public class PokemonGon extends FragmentActivity
         implements OnMapReadyCallback , GoogleMap.OnMarkerClickListener {
 
@@ -134,12 +137,11 @@ public class PokemonGon extends FragmentActivity
         beacon.setVisibility(View.VISIBLE);
         beacon.setBackgroundColor(Color.TRANSPARENT);
         beacon.setOnClickListener(listener);
-        Button call = (Button)findViewById(R.id.call);
-        call.setVisibility(View.VISIBLE);
-        call.setBackgroundColor(Color.TRANSPARENT);
-        call.setOnClickListener(listener);
         Button friend = (Button)findViewById(R.id.friend);
         friend.setOnClickListener(listener);
+        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+        mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
     }
     private Button.OnClickListener listener=new Button.OnClickListener(){
         @Override
@@ -153,11 +155,6 @@ public class PokemonGon extends FragmentActivity
                         .setMessage("今天依然健康呢!")
                         .setNegativeButton("太好了", null)
                         .show();
-            }
-            if(v.getId()==R.id.call)
-            {
-                String phoneNum="0925837969";
-                callPhone(phoneNum);
             }
             if(v.getId()==R.id.friend)
             {
@@ -345,6 +342,71 @@ public class PokemonGon extends FragmentActivity
                 intent.setClass(PokemonGon.this, PokemonGon_shake.class);
                 startActivity(intent);
                 onPause();
+            }
+
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
+    private SensorEventListener callSensorListener = new SensorEventListener() {
+        public void onSensorChanged(SensorEvent mSensorEvent) {
+            // 當前觸發時間
+            long mCurrentUpdateTime = System.currentTimeMillis();
+            // 觸發間隔時間 = 當前觸發時間 - 上次觸發時間
+            long mTimeInterval = mCurrentUpdateTime - mLastUpdateTime;
+            // 若觸發間隔時間< 70 則return;
+            if (mTimeInterval < UPTATE_INTERVAL_TIME)
+                return;
+
+            mLastUpdateTime = mCurrentUpdateTime;
+            // 取得xyz體感(Sensor)偏移
+            float x = mSensorEvent.values[0];
+            float y = mSensorEvent.values[1];
+            float z = mSensorEvent.values[2];
+            // 甩動偏移速度 = xyz體感(Sensor)偏移 - 上次xyz體感(Sensor)偏移
+            float mDeltaX = x - mLastX;
+            float mDeltaY = y - mLastY;
+            float mDeltaZ = z - mLastZ;
+            mLastX = x;
+            mLastY = y;
+            mLastZ = z;
+            // 體感(Sensor)甩動力道速度公式
+            mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
+            // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
+
+            if (mSpeed >= SPEED_SHRESHOLD) {
+                // 達到搖一搖甩動後要做的事情
+                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
+                builder.setTitle("出大事!!")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
+
+                       /* .setPositiveButton("我很不好", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                String phoneNum="0925837969";
+                                callPhone(phoneNum);
+                            }
+                        })
+*/
+                        .setNegativeButton("我很好",null)
+
+                        .setCancelable(true)
+                        .show();
+                    final AlertDialog dlg = builder.create();
+                    dlg.show();
+                    final Timer t = new Timer();
+                    t.schedule(new TimerTask() {
+                        public void run() {
+                            String phoneNum="0925837969";
+                            callPhone(phoneNum);
+                            dlg.dismiss();
+                            t.cancel();
+                        }
+                    }, 5000);
+
+
             }
 
         }
