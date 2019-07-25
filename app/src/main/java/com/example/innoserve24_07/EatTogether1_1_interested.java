@@ -102,7 +102,6 @@ public class EatTogether1_1_interested extends AppCompatActivity {
         });
     }
 
-
     private void accepted() {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
        // MyAlertDialog.setTitle("新活動");

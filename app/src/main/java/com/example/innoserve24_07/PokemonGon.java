@@ -7,6 +7,10 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.net.Uri;
 import android.os.Build;
 import android.support.v4.app.FragmentActivity;
@@ -106,6 +110,18 @@ public class PokemonGon extends FragmentActivity
     private Marker mLungTanPeole20;
     private static final LatLng me = new LatLng(24.87, 121.23);
     private Marker mme;
+    Button friend;
+    private SensorManager mSensorManager;   //體感(Sensor)使用管理
+    private Sensor mSensor;                 //體感(Sensor)類別
+    private float mLastX;                    //x軸體感(Sensor)偏移
+    private float mLastY;                    //y軸體感(Sensor)偏移
+    private float mLastZ;                    //z軸體感(Sensor)偏移
+    private double mSpeed;                 //甩動力道數度
+    private long mLastUpdateTime;           //觸發時間
+    //甩動力道數度設定值 (數值越大需甩動越大力，數值越小輕輕甩動即會觸發)
+    private static final int SPEED_SHRESHOLD = 3000;
+    //觸發間隔時間
+    private static final int UPTATE_INTERVAL_TIME = 70;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,6 +138,8 @@ public class PokemonGon extends FragmentActivity
         call.setVisibility(View.VISIBLE);
         call.setBackgroundColor(Color.TRANSPARENT);
         call.setOnClickListener(listener);
+        Button friend = (Button)findViewById(R.id.friend);
+        friend.setOnClickListener(listener);
     }
     private Button.OnClickListener listener=new Button.OnClickListener(){
         @Override
@@ -140,6 +158,22 @@ public class PokemonGon extends FragmentActivity
             {
                 String phoneNum="0925837969";
                 callPhone(phoneNum);
+            }
+            if(v.getId()==R.id.friend)
+            {
+                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
+                builder.setTitle("加好友")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("請搖一搖來加好友")
+                        .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+                                mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                                mSensorManager.registerListener(SensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+                            }
+                        })
+                        .show();
             }
         }
     };
@@ -279,4 +313,73 @@ public class PokemonGon extends FragmentActivity
         intent.setData(data);
         startActivity(intent);
     }
+    private SensorEventListener SensorListener = new SensorEventListener() {
+        public void onSensorChanged(SensorEvent mSensorEvent) {
+            // 當前觸發時間
+            long mCurrentUpdateTime = System.currentTimeMillis();
+            // 觸發間隔時間 = 當前觸發時間 - 上次觸發時間
+            long mTimeInterval = mCurrentUpdateTime - mLastUpdateTime;
+            // 若觸發間隔時間< 70 則return;
+            if (mTimeInterval < UPTATE_INTERVAL_TIME)
+                return;
+
+            mLastUpdateTime = mCurrentUpdateTime;
+            // 取得xyz體感(Sensor)偏移
+            float x = mSensorEvent.values[0];
+            float y = mSensorEvent.values[1];
+            float z = mSensorEvent.values[2];
+            // 甩動偏移速度 = xyz體感(Sensor)偏移 - 上次xyz體感(Sensor)偏移
+            float mDeltaX = x - mLastX;
+            float mDeltaY = y - mLastY;
+            float mDeltaZ = z - mLastZ;
+            mLastX = x;
+            mLastY = y;
+            mLastZ = z;
+            // 體感(Sensor)甩動力道速度公式
+            mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
+            // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
+
+            if (mSpeed >= SPEED_SHRESHOLD) {
+                // 達到搖一搖甩動後要做的事情
+                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
+                builder.setTitle("加好友")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("您已偵測到   杜爺爺    您要加他為好友嗎?")
+                        .setNegativeButton("不要", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
+                                builder.setTitle("加好友")
+                                        .setIcon(R.mipmap.ic_launcher)
+                                        .setMessage("基於您已經那麼用力搖了\n您還是跟  杜爺爺  成為好友了\n去好友名單確認吧!")
+                                        .setNegativeButton("那很好啊", null)
+                                        .show();
+                            }
+                        })
+                        .setPositiveButton("要!", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
+                                builder.setTitle("加好友")
+                                        .setIcon(R.mipmap.ic_launcher)
+                                        .setMessage("您已成功加   杜爺爺   為好友")
+                                        .setNegativeButton("太好了", null)
+                                        .show();
+                            }
+                        })
+                        .show();
+                onPause();
+            }
+
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
+
+    protected void onPause() {
+        super.onPause();
+        mSensorManager.unregisterListener(SensorListener);
+    }
+
 }

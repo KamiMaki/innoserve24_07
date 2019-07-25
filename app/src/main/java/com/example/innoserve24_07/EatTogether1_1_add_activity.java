@@ -72,7 +72,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
         new DatePickerDialog(v.getContext(), new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker view, int year, int month, int day){
-                String datetime=String.valueOf(year)+"-"+String.valueOf(month)+"-"+String.valueOf(day);
+                String datetime=String.valueOf(year)+"-"+String.valueOf(month+1)+"-"+String.valueOf(day);
                 editDate.setText(datetime);
             }
         },year,month,day).show();
