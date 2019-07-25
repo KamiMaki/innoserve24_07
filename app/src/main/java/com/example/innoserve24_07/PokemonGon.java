@@ -121,7 +121,7 @@ public class PokemonGon extends FragmentActivity
     //甩動力道數度設定值 (數值越大需甩動越大力，數值越小輕輕甩動即會觸發)
     private static final int SPEED_SHRESHOLD = 3000;
     //觸發間隔時間
-    private static final int UPTATE_INTERVAL_TIME = 70;
+    private static final int UPTATE_INTERVAL_TIME = 200;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -341,33 +341,9 @@ public class PokemonGon extends FragmentActivity
 
             if (mSpeed >= SPEED_SHRESHOLD) {
                 // 達到搖一搖甩動後要做的事情
-                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
-                builder.setTitle("加好友")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("您已偵測到   杜爺爺    您要加他為好友嗎?")
-                        .setNegativeButton("不要", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
-                                builder.setTitle("加好友")
-                                        .setIcon(R.mipmap.ic_launcher)
-                                        .setMessage("基於您已經那麼用力搖了\n您還是跟  杜爺爺  成為好友了\n去好友名單確認吧!")
-                                        .setNegativeButton("那很好啊", null)
-                                        .show();
-                            }
-                        })
-                        .setPositiveButton("要!", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
-                                builder.setTitle("加好友")
-                                        .setIcon(R.mipmap.ic_launcher)
-                                        .setMessage("您已成功加   杜爺爺   為好友")
-                                        .setNegativeButton("太好了", null)
-                                        .show();
-                            }
-                        })
-                        .show();
+                Intent intent = new Intent();
+                intent.setClass(PokemonGon.this, PokemonGon_shake.class);
+                startActivity(intent);
                 onPause();
             }
 
