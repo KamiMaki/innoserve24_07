@@ -23,6 +23,8 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
     private TextView dateText;
     private TextView listText;
     private Button listButton;
+    private TextView activity;
+    private Button actbt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +65,14 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
                 myListAlertDialog();
             }
         });
+        actbt = (Button)findViewById(R.id.actbt);
+        activity=(TextView) findViewById(R.id.activity);
+        actbt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                actListAlertDialog();
+            }
+        });
     }
     public void datePicker(View v){
         Calendar calendar= Calendar.getInstance();
@@ -83,7 +93,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
         "山峰社區活動中心","山峰社區長壽俱樂部","山子頂社區活動中心","高連社區活動中心","廣隆社區活動中心", "黃唐社區活動中心","佳安社區活動中心",
                 "九龍社區活動中心","中山社區活動中心","烏林社區活動中心","八德社區活動中心","三和社區活動中心","三水社區活動中心","高平社區活動中心","上林社區活動中心"};
         AlertDialog.Builder MyListAlertDialog = new AlertDialog.Builder(this);
-        MyListAlertDialog.setTitle("標題");
+        MyListAlertDialog.setTitle("請挑選一個地點");
         // 建立List的事件
         DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
@@ -102,20 +112,30 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
         MyListAlertDialog.setNeutralButton("取消", OkClick);
         MyListAlertDialog.show();
     }
+    AlertDialog actListAlertDialog;
+    private void actListAlertDialog() {
+        final String[] ListStr = {"揪吃飯","來跳舞","泡茶","下棋","爬山","唱歌","益智遊戲大賽","明星三缺一"};
+        AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
+        actListAlertDialog.setTitle("請挑選一個活動");
+        // 建立List的事件
+        DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                /*Toast.makeText(EatTogether1_1_add_activity.this, ListStr[which],// 顯示所點選的選項
+                        Toast.LENGTH_LONG).show();*/
+                activity.setText(ListStr[which]);
 
-    AlertDialog myDialog;//listdialog
-    private void showAlert()
-    {
-        AlertDialog.Builder myBuilder=new AlertDialog.Builder(this);
-        final CharSequence[] nebulae={"Boomerang","Onion"};
-        myBuilder.setTitle("list").setItems(nebulae, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int position) {
-                    Toast.makeText(EatTogether1_1_add_activity.this,nebulae[position].toString(),Toast.LENGTH_LONG).show();
             }
-        });
-        myDialog=myBuilder.create();
-        myDialog.show();
+        };
+        // 建立按下取消什麼事情都不做的事件
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        };
+        actListAlertDialog.setItems(ListStr, ListClick);
+        actListAlertDialog.setNeutralButton("取消", OkClick);
+        actListAlertDialog.show();
     }
+
+
 
 }
