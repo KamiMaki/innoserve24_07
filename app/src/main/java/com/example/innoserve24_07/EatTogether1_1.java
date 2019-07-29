@@ -34,7 +34,7 @@ public class EatTogether1_1 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback ,GoogleMap.OnMarkerClickListener{
 
     GoogleMap map;
-    //平鎮區所有活動中心
+    //平鎮區所有活動中心zz
     private static final LatLng PingChen1 = new LatLng(24.922596, 121.244921);
     private Marker mPingChen1;
     private static final LatLng PingChen2 = new LatLng(24.910730, 121.232426);
@@ -76,7 +76,8 @@ public class EatTogether1_1 extends AppCompatActivity
     private Marker mLungTan9;
     private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
     private Marker mLungTan10;
-int flag=0;
+
+    int flag =0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -92,11 +93,10 @@ int flag=0;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                flag=1;
                 Intent intent = new Intent();
                 intent.setClass(EatTogether1_1.this,EatTogether1_1_add_activity.class);
                 startActivity(intent);
-                flag=1;
-
             }
         });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
@@ -212,26 +212,6 @@ int flag=0;
     @Override
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
-        mPingChen1 = map.addMarker(new MarkerOptions()
-                .position(PingChen1));
-        mPingChen2 = map.addMarker(new MarkerOptions()
-                .position(PingChen2));
-        mPingChen3 = map.addMarker(new MarkerOptions()
-                .position(PingChen3));
-        mPingChen4 = map.addMarker(new MarkerOptions()
-                .position(PingChen4));
-        mPingChen5 = map.addMarker(new MarkerOptions()
-                .position(PingChen5));
-        mPingChen6 = map.addMarker(new MarkerOptions()
-                .position(PingChen6));
-        mPingChen7 = map.addMarker(new MarkerOptions()
-                .position(PingChen7));
-        mPingChen8 = map.addMarker(new MarkerOptions()
-                .position(PingChen8));
-        mPingChen9 = map.addMarker(new MarkerOptions()
-                .position(PingChen9));
-        mPingChen10 = map.addMarker(new MarkerOptions()
-                .position(PingChen10));
 
         mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1));
         mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2));
@@ -243,16 +223,7 @@ int flag=0;
         mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8));
         mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9));
         mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10));
-        mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1));
-        mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2));
-        mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3));
-        mPingChen4 = map.addMarker(new MarkerOptions().position(PingChen4));
-        mPingChen5 = map.addMarker(new MarkerOptions().position(PingChen5));
-        mPingChen6 = map.addMarker(new MarkerOptions().position(PingChen6));
-        mPingChen7 = map.addMarker(new MarkerOptions().position(PingChen7));
-        mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8));
-        mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9));
-        mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10));
+
         mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)));
         mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)));
         mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)));
@@ -264,8 +235,7 @@ int flag=0;
         mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)));
         mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)));
 
-       // map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 15));
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 13));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 18));
 
         map.setOnMarkerClickListener(this);
     }
@@ -274,14 +244,16 @@ int flag=0;
     public boolean onMarkerClick(Marker marker) {
         if (marker.equals(mPingChen1))
         {
-
+            Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
                 mmyAlertDialog();
         }
+
         if (marker.equals(mPingChen2))
         {
+            Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -289,6 +261,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen3))
         {
+            Toast.makeText(this, "獅子林社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -296,6 +269,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen4))
         {
+            Toast.makeText(this, "北興社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -303,6 +277,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen5))
         {
+            Toast.makeText(this, "北勢社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -310,6 +285,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen6))
         {
+            Toast.makeText(this, "山峰社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -317,6 +293,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen7))
         {
+            Toast.makeText(this, "山峰社區長壽俱樂部", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -324,6 +301,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen8))
         {
+            Toast.makeText(this, "山子頂社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -331,6 +309,7 @@ int flag=0;
         }
         if (marker.equals(mPingChen9))
         {
+            Toast.makeText(this, "高連社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
@@ -338,105 +317,93 @@ int flag=0;
         }
         if (marker.equals(mPingChen10))
         {
+            Toast.makeText(this, "廣隆社區活動中心", Toast.LENGTH_LONG).show();
             if(flag==0)
                 myAlertDialog();
             else
                 mmyAlertDialog();
+
             Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
-        if (marker.equals(mPingChen2))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen3))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "獅子林社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen4))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "北興社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen5))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "北勢社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen6))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "山峰社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen7))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "山峰社區長壽俱樂部", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen8))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "山子頂社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen9))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "高連社區活動中心", Toast.LENGTH_LONG).show();
-        }
-        if (marker.equals(mPingChen10))
-        {
-            myAlertDialog();
-            Toast.makeText(this, "廣隆社區活動中心", Toast.LENGTH_LONG).show();
-        }
+
         if (marker.equals(mLungTan1))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "黃唐社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan2))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "佳安社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan3))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "九龍社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan4))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "中山社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan5))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "烏林社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan6))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "八德社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan7))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "三和社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan8))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "三水社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan9))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "高平社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan10))
         {
-            myAlertDialog();
+            if(flag==0)
+                myAlertDialog();
+            else
+                mmyAlertDialog();
             Toast.makeText(this, "上林社區活動中心", Toast.LENGTH_LONG).show();
         }
         return false;
@@ -467,9 +434,28 @@ int flag=0;
             }
         };
         ;
-        MyAlertDialog.setNeutralButton("我要參加", OkClick);
-        MyAlertDialog.setPositiveButton("   關閉", OkClick);
+        MyAlertDialog.setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                accepted();
+            }
+        });
+        MyAlertDialog.setNeutralButton("   關閉", OkClick);
         MyAlertDialog.setNegativeButton("我感興趣    ", OkClick);
+        MyAlertDialog.show();
+
+    }
+    private void accepted() {
+        AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
+        // MyAlertDialog.setTitle("新活動");
+        MyAlertDialog.setMessage("您已成功報名!");
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // 如果不做任何事情 就會直接關閉 對話方塊
+            }
+        };
+        ;
+        //MyAlertDialog.setPositiveButton("   關閉", OkClick);
         MyAlertDialog.show();
 
     }
