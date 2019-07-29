@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class layout2_1 extends AppCompatActivity {
 
@@ -42,5 +43,15 @@ public class layout2_1 extends AppCompatActivity {
                  startActivity(intent);
              }
          });
+
+        Button share=(Button)findViewById(R.id.share);
+        share.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent();
+                intent.setClass(layout2_1.this,layout2_1_share.class);
+                startActivity(intent);
+            }
+        });
     }
 }
