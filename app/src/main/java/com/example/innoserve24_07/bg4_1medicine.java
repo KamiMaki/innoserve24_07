@@ -38,6 +38,21 @@ public class bg4_1medicine extends AppCompatActivity {
         final EditText kkk = new EditText(this);
        // addtext = findViewById(R.id.addtext);
         final EditText input = new EditText(this);
+
+        add.setVisibility(View.VISIBLE);
+        add.setBackgroundColor(Color.TRANSPARENT);
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder=new AlertDialog.Builder(bg4_1medicine.this);
+                builder.setTitle(input.getText())
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage(kkk.getText())
+                        .setPositiveButton("關閉",null)
+                        .show();
+            }
+        });
+
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(final View v) {
@@ -55,31 +70,19 @@ public class bg4_1medicine extends AppCompatActivity {
                                 builder.setTitle("新增項目")
                                         .setMessage("請輸入提醒時間:\n舉例:早上9點")
                                         .setView(kkk)
-                                        .setPositiveButton("新增",null)
+                                        .setPositiveButton("新增", new DialogInterface.OnClickListener() {
+                                            @Override
+                                            public void onClick(DialogInterface dialog, int which) {
+                                                add.setText("查看");
+                                                add.setBackgroundColor(Color.LTGRAY);
+                                            }
+                                        })
                                         .show();
-                                add.setText("查看");
                             }
                         })
                         .show();
-                myApplication.medicine=1;
             }
         });
-        if(myApplication.medicine==0)
-        {
-            add.setVisibility(View.VISIBLE);
-            add.setBackgroundColor(Color.TRANSPARENT);
-            add.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    AlertDialog.Builder builder=new AlertDialog.Builder(bg4_1medicine.this);
-                    builder.setTitle(input.getText())
-                            .setIcon(R.mipmap.ic_launcher)
-                            .setMessage(kkk.getText())
-                            .setPositiveButton("關閉",null)
-                            .show();
-                }
-            });
-        }
 
 
         add.setOnClickListener(new View.OnClickListener() {
@@ -94,7 +97,7 @@ public class bg4_1medicine extends AppCompatActivity {
             }
             });
         }
-        
+
 
     private Button.OnClickListener listener=new Button.OnClickListener(){
 
