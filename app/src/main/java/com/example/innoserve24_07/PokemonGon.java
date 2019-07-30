@@ -123,8 +123,10 @@ public class PokemonGon extends FragmentActivity
     private long mLastUpdateTime;           //觸發時間
     //甩動力道數度設定值 (數值越大需甩動越大力，數值越小輕輕甩動即會觸發)
     private static final int SPEED_SHRESHOLD = 3000;
+    private static final int SPEED_SHRESHOLD1= 4000;
     //觸發間隔時間
     private static final int UPTATE_INTERVAL_TIME = 200;
+    private static final int UPTATE_INTERVAL_TIME1 = 50;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -169,7 +171,7 @@ public class PokemonGon extends FragmentActivity
                             public void onClick(DialogInterface dialog, int which) {
                                 mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
                                 mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-                                mSensorManager.registerListener(SensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+                                mSensorManager.registerListener(SensorListener1, mSensor,SensorManager.SENSOR_DELAY_GAME);
                             }
                         })
                         .show();
@@ -313,6 +315,45 @@ public class PokemonGon extends FragmentActivity
         startActivity(intent);
     }
     private SensorEventListener SensorListener = new SensorEventListener() {
+        public void onSensorChanged(SensorEvent mSensorEvent) {
+            // 當前觸發時間
+            long mCurrentUpdateTime = System.currentTimeMillis();
+            // 觸發間隔時間 = 當前觸發時間 - 上次觸發時間
+            long mTimeInterval = mCurrentUpdateTime - mLastUpdateTime;
+            // 若觸發間隔時間< 70 則return;
+            if (mTimeInterval < UPTATE_INTERVAL_TIME1)
+                return;
+
+            mLastUpdateTime = mCurrentUpdateTime;
+            // 取得xyz體感(Sensor)偏移
+            float x = mSensorEvent.values[0];
+            float y = mSensorEvent.values[1];
+            float z = mSensorEvent.values[2];
+            // 甩動偏移速度 = xyz體感(Sensor)偏移 - 上次xyz體感(Sensor)偏移
+            float mDeltaX = x - mLastX;
+            float mDeltaY = y - mLastY;
+            float mDeltaZ = z - mLastZ;
+            mLastX = x;
+            mLastY = y;
+            mLastZ = z;
+            // 體感(Sensor)甩動力道速度公式
+            mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
+            // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
+
+            if (mSpeed >= SPEED_SHRESHOLD1) {
+                // 達到搖一搖甩動後要做的事情
+                Intent intent = new Intent();
+                intent.setClass(PokemonGon.this, PokemonGon_shake.class);
+                startActivity(intent);
+                onPause();
+            }
+
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
+    private SensorEventListener SensorListener1 = new SensorEventListener() {
         public void onSensorChanged(SensorEvent mSensorEvent) {
             // 當前觸發時間
             long mCurrentUpdateTime = System.currentTimeMillis();
