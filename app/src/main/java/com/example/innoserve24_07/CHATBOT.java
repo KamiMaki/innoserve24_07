@@ -8,14 +8,14 @@ import android.view.View;
 import android.widget.Button;
 
 public class CHATBOT extends AppCompatActivity {
- Button line;
+ Button line,Medicine;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatbot);
 
         line=(Button)findViewById(R.id.line);
-
+        Medicine=(Button)findViewById(R.id.Medicine);
         line.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -24,6 +24,14 @@ public class CHATBOT extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Medicine.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent =getPackageManager().getLaunchIntentForPackage(("com.Happy.Medicine"));
+                startActivity(intent);
+            }
+        });
+
 
     }
 }
