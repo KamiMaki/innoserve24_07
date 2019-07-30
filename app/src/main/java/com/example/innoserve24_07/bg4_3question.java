@@ -7,16 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class bg4_3question extends AppCompatActivity {
 
     Button bt;
-
+TextView q7;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bg4_3question);
         bt=(Button)findViewById(R.id.bt6);
+        q7=(TextView)findViewById(R.id.q7);
        bt.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
