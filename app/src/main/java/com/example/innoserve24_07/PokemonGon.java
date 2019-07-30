@@ -142,6 +142,8 @@ public class PokemonGon extends FragmentActivity
         mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
         mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+
+
     }
     private Button.OnClickListener listener=new Button.OnClickListener(){
         @Override

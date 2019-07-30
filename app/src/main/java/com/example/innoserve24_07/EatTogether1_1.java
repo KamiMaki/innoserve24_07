@@ -19,6 +19,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -32,7 +33,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 //test
 public class EatTogether1_1 extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback ,GoogleMap.OnMarkerClickListener{
-
+    Button quiz;
     GoogleMap map;
     //平鎮區所有活動中心zz
     private static final LatLng PingChen1 = new LatLng(24.922596, 121.244921);
@@ -106,6 +107,34 @@ public class EatTogether1_1 extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        final EditText input = new EditText(this);
+        Button quiz = (Button)findViewById(R.id.quiz);
+        quiz.setVisibility(View.VISIBLE);
+        quiz.setBackgroundColor(Color.TRANSPARENT);
+        quiz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+                builder.setTitle("每日小問題!!")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("請問您的媽媽名子叫什麼?\n答案:")
+                        .setView(input)
+                        .setPositiveButton("確定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+                                builder.setTitle("每日小問題!!")
+                                        .setIcon(R.mipmap.ic_launcher)
+                                        .setMessage("\n恭喜答對!!\n\n今天依然健康呢!\n沒有失智喔!放心\n")
+                                        .setNegativeButton("太好了",null)
+                                        .show();
+                            }
+                        })
+                        .show();
+
+            }
+        });
+
     }
 
 
@@ -161,7 +190,6 @@ public class EatTogether1_1 extends AppCompatActivity
         else if (id == R.id.nav_slideshow)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-
             builder.setTitle("以下是您主辦的活動")
                     .setIcon(R.mipmap.ic_launcher)
                     .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   陳奶奶\n                   杜爺爺\n\n總共:  4   人參加\n\n")
@@ -176,7 +204,6 @@ public class EatTogether1_1 extends AppCompatActivity
         else if (id == R.id.nav_tools)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-
             builder.setTitle("活動的回憶")
                     .setIcon(R.mipmap.ic_launcher)
                     .setMessage("\n108.04.28 溫爺爺的南極之旅\n\n108.08.24 杜爺爺的剉冰派對\n\n108.10.08 鄭奶奶的唱歌大會\n\n108.10.13 陳奶奶的下午茶\n")
