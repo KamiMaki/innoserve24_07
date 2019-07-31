@@ -35,6 +35,7 @@ public class bg4_3question extends AppCompatActivity {
                                q7.setText(hm.getText().toString());
                            }
                        })
+                       .setPositiveButton("關閉",null)
                        .show();
 
 
