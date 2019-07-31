@@ -111,32 +111,6 @@ public class EatTogether1_1 extends AppCompatActivity
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         final EditText input = new EditText(this);
-        Button quiz = (Button)findViewById(R.id.quiz);
-        quiz.setVisibility(View.VISIBLE);
-        quiz.setBackgroundColor(Color.TRANSPARENT);
-        quiz.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-                builder.setTitle("每日小問題!!")
-                        .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("請問您的媽媽名子叫什麼?\n答案:")
-                        .setView(input)
-                        .setPositiveButton("確定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-                                builder.setTitle("每日小問題!!")
-                                        .setIcon(R.mipmap.ic_launcher)
-                                        .setMessage("\n恭喜答對!!\n\n今天依然健康呢!\n沒有失智喔!放心\n")
-                                        .setNegativeButton("太好了",null)
-                                        .show();
-                            }
-                        })
-                        .show();
-
-            }
-        });
         Button invite = (Button)findViewById(R.id.invite);
         invite.setVisibility(View.VISIBLE);
         invite.setBackgroundColor(Color.TRANSPARENT);
