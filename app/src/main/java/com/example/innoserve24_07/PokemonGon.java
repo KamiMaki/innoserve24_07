@@ -34,7 +34,7 @@ import java.util.TimerTask;
 
 public class PokemonGon extends FragmentActivity
         implements OnMapReadyCallback , GoogleMap.OnMarkerClickListener {
-
+int flag=0;
     GoogleMap map;
     private static final LatLng LungTan1 = new LatLng(24.870541, 121.222465);
     private Marker mLungTan1;
@@ -122,11 +122,11 @@ public class PokemonGon extends FragmentActivity
     private double mSpeed;                 //甩動力道數度
     private long mLastUpdateTime;           //觸發時間
     //甩動力道數度設定值 (數值越大需甩動越大力，數值越小輕輕甩動即會觸發)
-    private static final int SPEED_SHRESHOLD = 3000;
-    private static final int SPEED_SHRESHOLD1= 4000;
+    private static final int SPEED_SHRESHOLD1 = 3000;
+    private static final int SPEED_SHRESHOLD= 4000;
     //觸發間隔時間
-    private static final int UPTATE_INTERVAL_TIME = 200;
-    private static final int UPTATE_INTERVAL_TIME1 = 50;
+    private static final int UPTATE_INTERVAL_TIME1= 200;
+    private static final int UPTATE_INTERVAL_TIME = 100;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -141,9 +141,25 @@ public class PokemonGon extends FragmentActivity
         beacon.setOnClickListener(listener);
         Button friend = (Button)findViewById(R.id.friend);
         friend.setOnClickListener(listener);
-        mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
-        mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+/*
+            if(flag==0)
+            {
+                mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+                mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+                flag++;
+                Toast.makeText(this, "callSensorListener", Toast.LENGTH_LONG).show();
+            }
+            else
+            {
+                mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+                mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+                Toast.makeText(this, "callSensorListener1", Toast.LENGTH_LONG).show();
+            }
+
+*/
+
 
 
     }
@@ -157,7 +173,15 @@ public class PokemonGon extends FragmentActivity
                 builder.setTitle("打卡成功!!")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("今天依然健康呢!")
-                        .setNegativeButton("太好了", null)
+                        .setNegativeButton("太好了", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+                                mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                                mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+                            }
+                        })
                         .show();
             }
             if(v.getId()==R.id.friend)
@@ -314,7 +338,7 @@ public class PokemonGon extends FragmentActivity
         intent.setData(data);
         startActivity(intent);
     }
-    private SensorEventListener SensorListener = new SensorEventListener() {
+    private SensorEventListener SensorListener1 = new SensorEventListener() {
         public void onSensorChanged(SensorEvent mSensorEvent) {
             // 當前觸發時間
             long mCurrentUpdateTime = System.currentTimeMillis();
@@ -353,7 +377,7 @@ public class PokemonGon extends FragmentActivity
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
-    private SensorEventListener SensorListener1 = new SensorEventListener() {
+    private SensorEventListener SensorListener= new SensorEventListener() {
         public void onSensorChanged(SensorEvent mSensorEvent) {
             // 當前觸發時間
             long mCurrentUpdateTime = System.currentTimeMillis();
@@ -424,17 +448,7 @@ public class PokemonGon extends FragmentActivity
                 builder.setTitle("出大事!!")
                         .setIcon(R.mipmap.ic_launcher)
                         .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
-
-                       /* .setPositiveButton("我很不好", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                String phoneNum="0925837969";
-                                callPhone(phoneNum);
-                            }
-                        })
-*/
                         .setNegativeButton("我很好",null)
-
                         .setCancelable(true)
                         .show();
                     final AlertDialog dlg = builder.create();
@@ -448,6 +462,41 @@ public class PokemonGon extends FragmentActivity
                             t.cancel();
                         }
                     }, 5000);
+            }
+
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
+    private SensorEventListener callSensorListener1 = new SensorEventListener() {
+        public void onSensorChanged(SensorEvent mSensorEvent) {
+            // 當前觸發時間
+            long mCurrentUpdateTime = System.currentTimeMillis();
+            // 觸發間隔時間 = 當前觸發時間 - 上次觸發時間
+            long mTimeInterval = mCurrentUpdateTime - mLastUpdateTime;
+            // 若觸發間隔時間< 70 則return;
+            if (mTimeInterval < UPTATE_INTERVAL_TIME)
+                return;
+
+            mLastUpdateTime = mCurrentUpdateTime;
+            // 取得xyz體感(Sensor)偏移
+            float x = mSensorEvent.values[0];
+            float y = mSensorEvent.values[1];
+            float z = mSensorEvent.values[2];
+            // 甩動偏移速度 = xyz體感(Sensor)偏移 - 上次xyz體感(Sensor)偏移
+            float mDeltaX = x - mLastX;
+            float mDeltaY = y - mLastY;
+            float mDeltaZ = z - mLastZ;
+            mLastX = x;
+            mLastY = y;
+            mLastZ = z;
+            // 體感(Sensor)甩動力道速度公式
+            mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
+            // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
+
+            if (mSpeed >= SPEED_SHRESHOLD) {
+                // 達到搖一搖甩動後要做的事情
 
 
             }
@@ -457,7 +506,6 @@ public class PokemonGon extends FragmentActivity
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
         }
     };
-
     protected void onPause() {
         super.onPause();
         mSensorManager.unregisterListener(SensorListener);

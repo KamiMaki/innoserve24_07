@@ -77,8 +77,11 @@ public class EatTogether1_1 extends AppCompatActivity
     private Marker mLungTan9;
     private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
     private Marker mLungTan10;
-
+    private String[] tobuy = new String[] {"李爺爺","林奶奶","杜爺爺","張奶奶","邱奶奶","何奶奶","胡爺爺","吳爺爺"};
+    private boolean[] bechecked=new boolean[tobuy.length];
     int flag =0;
+    int yy=0;
+    Button invite;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -132,6 +135,27 @@ public class EatTogether1_1 extends AppCompatActivity
                         })
                         .show();
 
+            }
+        });
+        Button invite = (Button)findViewById(R.id.invite);
+        invite.setVisibility(View.VISIBLE);
+        invite.setBackgroundColor(Color.TRANSPARENT);
+        invite.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+                builder.setTitle("邀請通知!")
+                        .setMessage("陳奶奶   邀請您參加\n益智遊戲大賽   請問您是否參加?")
+                        .setNeutralButton("不用了",null)
+                        .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+                                builder.setMessage("您已成功報名!")
+                                        .show();
+                            }
+                        })
+                        .show();
             }
         });
 
@@ -189,17 +213,49 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         else if (id == R.id.nav_slideshow)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-            builder.setTitle("以下是您主辦的活動")
-                    .setIcon(R.mipmap.ic_launcher)
-                    .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   陳奶奶\n                   杜爺爺\n\n總共:  4   人參加\n\n")
-                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    })
-                    .show();
+          if(yy==0)
+          {
+              AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+              builder.setTitle("以下是您主辦的活動")
+                      .setIcon(R.mipmap.ic_launcher)
+                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   謝奶奶\n                   方爺爺\n\n總共:    4   人參加\n\n")
+                      .setNeutralButton("關閉",null)
+                      .setPositiveButton("邀請好友", new DialogInterface.OnClickListener() {
+                          @Override
+                          public void onClick(DialogInterface dialog, int which) {
+                              android.app.AlertDialog.Builder builder = new android.app.AlertDialog.Builder(EatTogether1_1.this);
+                              builder.setTitle("邀請好友")
+                                      .setIcon(R.mipmap.ic_launcher)
+                                      .setMultiChoiceItems(tobuy, bechecked, new DialogInterface.OnMultiChoiceClickListener() {
+                                          @Override
+                                          public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+                                              // TODO Auto-generated method stub
+                                              bechecked[which] = isChecked;
+                                          }
+                                      })
+                                      .setPositiveButton("送出邀請", new DialogInterface.OnClickListener() {
+                                          @Override
+                                          public void onClick(DialogInterface dialog, int which) {
+                                              AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+                                              builder.setMessage("已成功送出邀請!" )
+                                                      .show();
+                                          }
+                                      })
+                                      .show();
+                          }
+                      })
+                      .show();
+              yy++;
+          }
+          else
+          {
+              AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
+              builder.setTitle("以下是您主辦的活動")
+                      .setIcon(R.mipmap.ic_launcher)
+                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   謝奶奶\n                   方爺爺\n                   杜爺爺\n\n總共:    5   人參加\n\n")
+                      .setPositiveButton("關閉",null)
+                      .show();
+          }
         }
         else if (id == R.id.nav_tools)
         {
@@ -218,16 +274,11 @@ public class EatTogether1_1 extends AppCompatActivity
         else if (id == R.id.nav_share)
         {
             AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-
             builder.setTitle("好友名單:")
                     .setIcon(R.mipmap.ic_launcher)
                     .setMessage("\n溫爺爺\n\n杜爺爺\n\n鄭奶奶\n\n陳奶奶\n")
-                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
+                    .setPositiveButton("關閉", null)
 
-                        }
-                    })
                     .show();
         }
 
@@ -262,7 +313,7 @@ public class EatTogether1_1 extends AppCompatActivity
         mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)));
         mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen1, 18));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen2, 13));
 
         map.setOnMarkerClickListener(this);
     }
@@ -271,173 +322,108 @@ public class EatTogether1_1 extends AppCompatActivity
     public boolean onMarkerClick(Marker marker) {
         if (marker.equals(mPingChen1))
         {
+            act5ListAlertDialog();
             Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
         }
 
         if (marker.equals(mPingChen2))
         {
+            noAlertDialog();
             Toast.makeText(this, "東勢社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
         }
         if (marker.equals(mPingChen3))
         {
+            act3ListAlertDialog();
             Toast.makeText(this, "獅子林社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
         }
         if (marker.equals(mPingChen4))
         {
+            act3ListAlertDialog();
             Toast.makeText(this, "北興社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
         }
         if (marker.equals(mPingChen5))
         {
+            act5ListAlertDialog();
             Toast.makeText(this, "北勢社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
         }
         if (marker.equals(mPingChen6))
         {
             Toast.makeText(this, "山峰社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act3ListAlertDialog();
         }
         if (marker.equals(mPingChen7))
         {
             Toast.makeText(this, "山峰社區長壽俱樂部", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act3ListAlertDialog();
         }
         if (marker.equals(mPingChen8))
         {
             Toast.makeText(this, "山子頂社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act5ListAlertDialog();
         }
         if (marker.equals(mPingChen9))
         {
             Toast.makeText(this, "高連社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act5ListAlertDialog();
         }
         if (marker.equals(mPingChen10))
         {
-            Toast.makeText(this, "廣隆社區活動中心", Toast.LENGTH_LONG).show();
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
-
+            act3ListAlertDialog();
             Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
 
         if (marker.equals(mLungTan1))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+        { act3ListAlertDialog();
+
             Toast.makeText(this, "黃唐社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan2))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+        { act3ListAlertDialog();
             Toast.makeText(this, "佳安社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan3))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+        { act5ListAlertDialog();
+
             Toast.makeText(this, "九龍社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan4))
         {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act5ListAlertDialog();
             Toast.makeText(this, "中山社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan5))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+        { act3ListAlertDialog();
             Toast.makeText(this, "烏林社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan6))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+        { act5ListAlertDialog();
+
             Toast.makeText(this, "八德社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan7))
-        {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+        { act3ListAlertDialog();
             Toast.makeText(this, "三和社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan8))
         {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act5ListAlertDialog();
             Toast.makeText(this, "三水社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan9))
         {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act3ListAlertDialog();
             Toast.makeText(this, "高平社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan10))
         {
-            if(flag==0)
-                myAlertDialog();
-            else
-                mmyAlertDialog();
+            act5ListAlertDialog();
             Toast.makeText(this, "上林社區活動中心", Toast.LENGTH_LONG).show();
         }
         return false;
 
     }
     //     點marker時跳出來的彈跳視窗
-    private void myAlertDialog() {
+    private void noAlertDialog() {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
         MyAlertDialog.setTitle("活動:");
         MyAlertDialog.setMessage("目前無活動");
@@ -451,16 +437,15 @@ public class EatTogether1_1 extends AppCompatActivity
         MyAlertDialog.show();
 
     }
-    private void mmyAlertDialog() {
+
+    private void eatAlertDialog() {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
-        MyAlertDialog.setTitle("活動:");
-        MyAlertDialog.setMessage("\n\n鄭奶奶揪吃飯\n\n活動地點:社區活動中心\n\n活動日期:108.07.28\n\n活動時間:11:30\n\n活動內容:大家每個人帶一道菜來，一人一道就有一桌菜了\n\n");
+        MyAlertDialog.setTitle("活動:  鄭奶奶揪吃飯");
+        MyAlertDialog.setMessage("\n活動地點:社區活動中心\n\n活動日期:108.07.28\n\n活動時間:11:30\n\n活動內容:大家每個人帶一道菜來，一人一道就有一桌菜了\n\n");
         DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                // 如果不做任何事情 就會直接關閉 對話方塊
             }
         };
-        ;
         MyAlertDialog.setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -468,23 +453,63 @@ public class EatTogether1_1 extends AppCompatActivity
             }
         });
         MyAlertDialog.setNeutralButton("   關閉", OkClick);
-        MyAlertDialog.setNegativeButton("我感興趣    ", OkClick);
+        MyAlertDialog.setNegativeButton("我感興趣    ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                interested();
+            }
+        });
         MyAlertDialog.show();
-
     }
+
     private void accepted() {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
-        // MyAlertDialog.setTitle("新活動");
         MyAlertDialog.setMessage("您已成功報名!");
-        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+        MyAlertDialog.show();
+    }
+    private void interested() {
+        AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
+        MyAlertDialog.setMessage("已成功加到「感興趣活動」中");
+        MyAlertDialog.show();
+    }
+    private void act5ListAlertDialog() {
+        final String[] ListStr = {"鄭奶奶揪吃飯","溫爺爺揪下棋","杜爺爺揪爬山","陳奶奶揪益智遊戲大賽","林奶奶揪明星三缺一"};
+        AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
+        actListAlertDialog.setTitle("請挑選一個活動");
+        // 建立List的事件
+        DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
-                // 如果不做任何事情 就會直接關閉 對話方塊
+               //onclick to do
+                eatAlertDialog();
             }
         };
-        ;
-        //MyAlertDialog.setPositiveButton("   關閉", OkClick);
-        MyAlertDialog.show();
-
+        // 建立按下取消什麼事情都不做的事件
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        };
+        actListAlertDialog.setItems(ListStr, ListClick);
+        actListAlertDialog.setNeutralButton("取消", OkClick);
+        actListAlertDialog.show();
     }
-
+    private void act3ListAlertDialog() {
+        final String[] ListStr = {"鄭奶奶揪吃飯","溫爺爺揪下棋","杜爺爺揪爬山"};
+        AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
+        actListAlertDialog.setTitle("請挑選一個活動");
+        // 建立List的事件
+        DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //onclick to do
+                eatAlertDialog();
+            }
+        };
+        // 建立按下取消什麼事情都不做的事件
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        };
+        actListAlertDialog.setItems(ListStr, ListClick);
+        actListAlertDialog.setNeutralButton("取消", OkClick);
+        actListAlertDialog.show();
+    }
 }
