@@ -78,7 +78,7 @@ public class EatTogether1_1 extends AppCompatActivity
     private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
     private Marker mLungTan10;
 
-    private static final LatLng me = new LatLng(24.910735, 121.232430);
+    private static final LatLng me = new LatLng(24.911000, 121.233500);
     private Marker mme;
 
     private String[] tobuy = new String[] {"李爺爺","林奶奶","杜爺爺","張奶奶","邱奶奶","何奶奶","胡爺爺","吳爺爺"};
@@ -290,7 +290,7 @@ public class EatTogether1_1 extends AppCompatActivity
         mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
         mme=map.addMarker((new MarkerOptions().position(me)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 13));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 15));
 
         map.setOnMarkerClickListener(this);
     }
