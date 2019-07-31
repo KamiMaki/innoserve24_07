@@ -16,10 +16,18 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <activity android:name=".layout2_1_share">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <activity android:name=".login">
         </activity>
 
         <activity android:name=".layout2_1_share"></activity>
+
 
         <activity android:name=".PokemonGon_shake" />
         <activity android:name=".CHATBOT" />

@@ -18,7 +18,7 @@
         app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal_background" />
 
     <Button
-        android:id="@+id/bt_select"
+        android:id="@+id/select_image"
         android:layout_width="115dp"
         android:layout_height="64dp"
         android:text="挑選照片"
@@ -30,7 +30,7 @@
         app:layout_constraintVertical_bias="0.055" />
 
     <Button
-        android:id="@+id/bt_share"
+        android:id="@+id/share_image"
         android:layout_width="115dp"
         android:layout_height="64dp"
         android:text="分享給好友"
@@ -40,5 +40,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
+
+    <ImageView
+        android:id="@+id/shar"
+        android:layout_width="280dp"
+        android:layout_height="250dp"
+        android:background="@drawable/sharej"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/iv"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toEndOf="@+id/iv"
+        app:layout_constraintTop_toBottomOf="@+id/iv"
+        app:layout_constraintVertical_bias="1.7" />
+
 
 </android.support.constraint.ConstraintLayout>

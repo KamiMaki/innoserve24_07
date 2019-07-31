@@ -8,19 +8,29 @@ import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
+import android.view.View;
+import android.view.View.OnClickListener;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class layout2_1_share extends AppCompatActivity {
 
-    @Override
+
+   @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout2_1_share);
-        Button select=(Button)findViewById(R.id.bt_select);
+        Button select=(Button)findViewById(R.id.select_image);
         select.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -33,14 +43,18 @@ public class layout2_1_share extends AppCompatActivity {
                 startActivityForResult(intent, 1);
             }
         });
-        Button share=(Button)findViewById(R.id.bt_share);
-        share.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+       final Button share=(Button)findViewById(R.id.share_image);
+       share.setOnClickListener(new View.OnClickListener(){
+           @Override
+           public void onClick(View v) {
+                ImageView im=(ImageView)findViewById(R.id.shar);
+                im.setVisibility(View.VISIBLE);
 
-            }
-        });
-    }
+           }
+       });
+   };
+
+
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
