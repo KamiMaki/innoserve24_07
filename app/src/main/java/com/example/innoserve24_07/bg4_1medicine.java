@@ -61,6 +61,7 @@ public class bg4_1medicine extends AppCompatActivity {
                 builder.setTitle("新增項目")
                         .setMessage("請輸入項目:")
                         .setView(input)
+                        .setNegativeButton("關閉",null)
                         .setPositiveButton("繼續", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
