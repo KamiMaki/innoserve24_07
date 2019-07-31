@@ -77,6 +77,10 @@ public class EatTogether1_1 extends AppCompatActivity
     private Marker mLungTan9;
     private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
     private Marker mLungTan10;
+
+    private static final LatLng me = new LatLng(24.910735, 121.232430);
+    private Marker mme;
+
     private String[] tobuy = new String[] {"李爺爺","林奶奶","杜爺爺","張奶奶","邱奶奶","何奶奶","胡爺爺","吳爺爺"};
     private boolean[] bechecked=new boolean[tobuy.length];
     int flag =0;
@@ -263,29 +267,30 @@ public class EatTogether1_1 extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
 
-        mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1));
-        mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2));
-        mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3));
-        mPingChen4 = map.addMarker(new MarkerOptions().position(PingChen4));
-        mPingChen5 = map.addMarker(new MarkerOptions().position(PingChen5));
-        mPingChen6 = map.addMarker(new MarkerOptions().position(PingChen6));
-        mPingChen7 = map.addMarker(new MarkerOptions().position(PingChen7));
-        mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8));
-        mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9));
-        mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10));
+        mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
+        mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mPingChen4 = map.addMarker(new MarkerOptions().position(PingChen4).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mPingChen5 = map.addMarker(new MarkerOptions().position(PingChen5).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mPingChen6 = map.addMarker(new MarkerOptions().position(PingChen6).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mPingChen7 = map.addMarker(new MarkerOptions().position(PingChen7).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
 
-        mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)));
-        mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)));
-        mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)));
-        mLungTan4=map.addMarker((new MarkerOptions().position(LungTan4)));
-        mLungTan5=map.addMarker((new MarkerOptions().position(LungTan5)));
-        mLungTan6=map.addMarker((new MarkerOptions().position(LungTan6)));
-        mLungTan7=map.addMarker((new MarkerOptions().position(LungTan7)));
-        mLungTan8=map.addMarker((new MarkerOptions().position(LungTan8)));
-        mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)));
-        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)));
+        mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mLungTan4=map.addMarker((new MarkerOptions().position(LungTan4)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mLungTan5=map.addMarker((new MarkerOptions().position(LungTan5)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mLungTan6=map.addMarker((new MarkerOptions().position(LungTan6)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mLungTan7=map.addMarker((new MarkerOptions().position(LungTan7)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mLungTan8=map.addMarker((new MarkerOptions().position(LungTan8)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
+        mme=map.addMarker((new MarkerOptions().position(me)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(PingChen2, 13));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 13));
 
         map.setOnMarkerClickListener(this);
     }
@@ -340,22 +345,23 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         if (marker.equals(mPingChen10))
         {
+
             act3ListAlertDialog();
             Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
-
         if (marker.equals(mLungTan1))
-        { act3ListAlertDialog();
-
+        {
+            act3ListAlertDialog();
             Toast.makeText(this, "黃唐社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan2))
-        { act3ListAlertDialog();
+        {
+            act3ListAlertDialog();
             Toast.makeText(this, "佳安社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan3))
-        { act5ListAlertDialog();
-
+        {
+            act5ListAlertDialog();
             Toast.makeText(this, "九龍社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan4))
@@ -364,16 +370,18 @@ public class EatTogether1_1 extends AppCompatActivity
             Toast.makeText(this, "中山社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan5))
-        { act3ListAlertDialog();
+        {
+            act3ListAlertDialog();
             Toast.makeText(this, "烏林社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan6))
-        { act5ListAlertDialog();
-
+        {
+            act5ListAlertDialog();
             Toast.makeText(this, "八德社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan7))
-        { act3ListAlertDialog();
+        {
+            act3ListAlertDialog();
             Toast.makeText(this, "三和社區活動中心", Toast.LENGTH_LONG).show();
         }
         if (marker.equals(mLungTan8))
