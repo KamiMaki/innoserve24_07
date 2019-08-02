@@ -31,8 +31,13 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/add"
         android:tint="#03E03434"
-        app:backgroundTint="#2196F3"
-        app:srcCompat="@drawable/add" />
+        app:background="@drawable/add"
+        app:backgroundTint="#34786A"
+        app:backgroundTintMode="multiply"
+        app:fabSize="normal" />
+
+
 
 </android.support.design.widget.CoordinatorLayout>
