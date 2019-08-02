@@ -16,6 +16,7 @@ public class layout2_1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_layout2_1);
+      /*
         final EditText input = new EditText(this);
         AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1.this);
         builder.setTitle("每日小問題!!")
@@ -34,6 +35,7 @@ public class layout2_1 extends AppCompatActivity {
                     }
                 })
                 .show();
+                */
        Button point = (Button)findViewById(R.id.point);
         point.setOnClickListener(new View.OnClickListener() {
             @Override
