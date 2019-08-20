@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,layout1.class);
+                intent.setClass(MainActivity.this,New.class);
                 startActivity(intent);
             }
         });
