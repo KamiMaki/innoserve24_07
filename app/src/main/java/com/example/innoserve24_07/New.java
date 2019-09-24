@@ -1,5 +1,7 @@
 package com.example.innoserve24_07;
 
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -32,12 +34,14 @@ public class New extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         map = googleMap;
 
-        mme=map.addMarker((new MarkerOptions().position(me)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mme=map.addMarker((new MarkerOptions().position(me)).anchor(0.5f,0.5f).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
+
 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 15));
 
         //map.setOnMarkerClickListener(this);
     };
+
 
     //按地標放這裡
     @Override
