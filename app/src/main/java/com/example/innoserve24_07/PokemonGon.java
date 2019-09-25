@@ -243,7 +243,7 @@ int flag=0;
         mLungTanPeole19=map.addMarker(new MarkerOptions().position(LungTanPeople19).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
         mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
         // 改標記符號這樣寫             mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
-        mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
+        mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.fromResource(R.drawable.me)));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 18));
         map.setOnMarkerClickListener(this);
     }
