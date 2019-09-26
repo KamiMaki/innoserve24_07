@@ -23,14 +23,17 @@
     <include
         layout="@layout/content_eat_together"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        app:layout_anchor="@+id/fab"
+        app:layout_anchorGravity="start|top" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="205dp"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
+        android:layout_marginRight="15dp"
+        android:layout_marginBottom="60dp"
         android:src="@drawable/add"
         android:tint="#03E03434"
         app:background="@drawable/add"
