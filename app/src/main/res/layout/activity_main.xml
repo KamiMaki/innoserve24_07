@@ -101,30 +101,29 @@
         app:srcCompat="@drawable/gogogo" />
 
     <Button
+        android:id="@+id/bt5"
+        android:layout_width="200dp"
+        android:layout_height="175dp"
+        android:background="@drawable/taoyuan"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.847" />
+
+    <Button
         android:id="@+id/bt4"
-        android:layout_width="162dp"
-        android:layout_height="171dp"
-        android:background="@drawable/bgbtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/setting11"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.935"
+        app:layout_constraintHorizontal_bias="0.913"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.844" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="150dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.938"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bt4"
-        app:layout_constraintVertical_bias="0.448"
-        app:srcCompat="@drawable/grocery" />
+        app:layout_constraintVertical_bias="0.952" />
 
 </android.support.constraint.ConstraintLayout>

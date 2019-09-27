@@ -17,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button bt2;
     Button bt3;
     Button bt4;
-    //Button bt5;   //debug用，連到New
+    Button bt5;
     Button weather;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         bt2 = (Button)findViewById(R.id.bt2);
         bt3 = (Button)findViewById(R.id.bt3);
         bt4 = (Button)findViewById(R.id.bt4);
-        //bt5 = (Button)findViewById(R.id.bt5);
+        bt5 = (Button)findViewById(R.id.bt5);
 
 /*
         MyApplication myApplication = (MyApplication) getApplicationContext();
@@ -80,14 +80,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-       /* bt5.setOnClickListener(new View.OnClickListener() {
+
+       bt5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent();
-                intent.setClass(MainActivity.this,New.class);
+                intent.setClass(MainActivity.this,taoyuan.class);
                 startActivity(intent);
             }
-        });*/
+        });
 
         final EditText input = new EditText(this);
         weather = (Button)findViewById(R.id.weather);
