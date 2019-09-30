@@ -235,17 +235,9 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         else if (id == R.id.nav_tools)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-            builder.setTitle("活動的回憶")
-                    .setIcon(R.mipmap.ic_launcher)
-                    .setMessage("\n108.04.28 溫爺爺的南極之旅\n\n108.08.24 杜爺爺的剉冰派對\n\n108.10.08 鄭奶奶的唱歌大會\n\n108.10.13 陳奶奶的下午茶\n")
-                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    })
-                    .show();
+            Intent intent = new Intent();
+            intent.setClass(EatTogether1_1.this,EatTogether_Memory.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_share)
         {
@@ -258,7 +250,10 @@ public class EatTogether1_1 extends AppCompatActivity
                     .show();
         }
 
+        else if (id==R.id.recommend)
+        {
 
+        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
