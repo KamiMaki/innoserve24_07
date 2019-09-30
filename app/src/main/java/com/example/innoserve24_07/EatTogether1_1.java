@@ -78,7 +78,7 @@ public class EatTogether1_1 extends AppCompatActivity
     private static final LatLng LungTan10 = new LatLng(24.829095, 121.246823 );
     private Marker mLungTan10;
 
-    private static final LatLng me = new LatLng(24.910735, 121.232430);
+    private static final LatLng me = new LatLng(24.937601, 121.224165);
     private Marker mme;
 
     private String[] tobuy = new String[] {"李爺爺","林奶奶","杜爺爺","張奶奶","邱奶奶","何奶奶","胡爺爺","吳爺爺"};
@@ -267,30 +267,30 @@ public class EatTogether1_1 extends AppCompatActivity
     public void onMapReady(GoogleMap googleMap) {
         map=googleMap;
 
-        mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_VIOLET)));
-        mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mPingChen4 = map.addMarker(new MarkerOptions().position(PingChen4).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mPingChen5 = map.addMarker(new MarkerOptions().position(PingChen5).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mPingChen6 = map.addMarker(new MarkerOptions().position(PingChen6).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mPingChen7 = map.addMarker(new MarkerOptions().position(PingChen7).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
+        mPingChen1 = map.addMarker(new MarkerOptions().position(PingChen1).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mPingChen2 = map.addMarker(new MarkerOptions().position(PingChen2).icon(BitmapDescriptorFactory.fromResource(R.drawable.no_activity)));
+        mPingChen3 = map.addMarker(new MarkerOptions().position(PingChen3).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mPingChen4 = map.addMarker(new MarkerOptions().position(PingChen4).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mPingChen5 = map.addMarker(new MarkerOptions().position(PingChen5).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mPingChen6 = map.addMarker(new MarkerOptions().position(PingChen6).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mPingChen7 = map.addMarker(new MarkerOptions().position(PingChen7).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mPingChen8 = map.addMarker(new MarkerOptions().position(PingChen8).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mPingChen9 = map.addMarker(new MarkerOptions().position(PingChen9).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mPingChen10 = map.addMarker(new MarkerOptions().position(PingChen10).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
 
-        mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mLungTan4=map.addMarker((new MarkerOptions().position(LungTan4)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mLungTan5=map.addMarker((new MarkerOptions().position(LungTan5)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mLungTan6=map.addMarker((new MarkerOptions().position(LungTan6)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mLungTan7=map.addMarker((new MarkerOptions().position(LungTan7)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mLungTan8=map.addMarker((new MarkerOptions().position(LungTan8)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_ORANGE)));
-        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_YELLOW)));
-        mme=map.addMarker((new MarkerOptions().position(me)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_GREEN)));
+        mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mLungTan3=map.addMarker((new MarkerOptions().position(LungTan3)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mLungTan4=map.addMarker((new MarkerOptions().position(LungTan4)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mLungTan5=map.addMarker((new MarkerOptions().position(LungTan5)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mLungTan6=map.addMarker((new MarkerOptions().position(LungTan6)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mLungTan7=map.addMarker((new MarkerOptions().position(LungTan7)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mLungTan8=map.addMarker((new MarkerOptions().position(LungTan8)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
+        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mme=map.addMarker((new MarkerOptions().position(me)).icon(BitmapDescriptorFactory.fromResource(R.drawable.me)));
 
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 13));
+        map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 15));
 
         map.setOnMarkerClickListener(this);
     }
@@ -345,7 +345,6 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         if (marker.equals(mPingChen10))
         {
-
             act3ListAlertDialog();
             Toast.makeText(this, "東社社區活動中心", Toast.LENGTH_LONG).show();
         }
