@@ -26,8 +26,6 @@
         <activity android:name=".login">
         </activity>
 
-        <activity android:name=".layout2_1_share"></activity>
-
 
         <activity android:name=".PokemonGon_shake" />
         <activity android:name=".CHATBOT" />
@@ -36,11 +34,6 @@
         <activity android:name=".EatTogether1_1_interested" />
         <activity android:name=".EatTogether1_1_accepted_chatroom" />
         <activity android:name=".EatTogether1_1_accepted" />
-        <activity android:name=".EatTogether1_1_interested" />
-        <activity android:name=".bg4_2buy" />
-        <activity android:name=".bg4_3question" />
-        <activity android:name=".bg4_2buy" />
-        <activity android:name=".EatTogether1_1_interested" />
         <activity android:name=".bg4_1medicine" />
         <activity android:name=".bg" />
         <activity android:name=".EatTogether1_1_add_activity" />
