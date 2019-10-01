@@ -8,15 +8,15 @@ import android.view.View;
 import android.widget.Button;
 
 public class chatbot extends AppCompatActivity {
- Button ask,Medicine;
+ Button askme,Medicine;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatbot);
 
-        ask=(Button)findViewById(R.id.ask);
+        askme=(Button)findViewById(R.id.askme);
         Medicine=(Button)findViewById(R.id.Medicine);
-        ask.setOnClickListener(new View.OnClickListener() {
+        askme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Uri uri = Uri.parse("http://nav.cx/irJd3Vx");//要跳转的网址

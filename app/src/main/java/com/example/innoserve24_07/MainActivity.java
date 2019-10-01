@@ -1,11 +1,18 @@
 package com.example.innoserve24_07;
 
 import android.app.AlertDialog;
+import android.app.Notification;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.os.Build;
+import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,6 +25,10 @@ public class MainActivity extends AppCompatActivity {
     Button bt4;
     Button bt5;
     Button weather;
+    Button buysth;
+
+    private final static int NOTIFICATION_ID = 0;
+    private NotificationManager notificationManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +39,8 @@ public class MainActivity extends AppCompatActivity {
         bt4 = (Button)findViewById(R.id.bt4);
         bt5 = (Button)findViewById(R.id.bt5);
 
+
+        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 /*
         MyApplication myApplication = (MyApplication) getApplicationContext();
         //myApplication.a = 0;
@@ -40,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 */
+
         bt1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -88,6 +102,28 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        buysth=(Button)findViewById(R.id.buysth) ;
+        buysth.setVisibility(View.VISIBLE);
+        buysth.setBackgroundColor(Color.TRANSPARENT);
+        buysth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Thread.sleep(7000); //1000為1秒
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                Notification notification = new Notification.Builder(MainActivity.this)
+                        .setContentTitle("日用品購買提醒")
+                        .setContentText("要添購衛生紙")
+                        .setSmallIcon(android.R.drawable.ic_dialog_email)
+                        .setAutoCancel(true)
+                        .build();
+                notificationManager.notify(NOTIFICATION_ID, notification);
+            }
+        });
+
 
         final EditText input = new EditText(this);
         weather = (Button)findViewById(R.id.weather);
