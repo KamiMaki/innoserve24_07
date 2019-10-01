@@ -27,7 +27,7 @@
         </activity>
         <activity android:name=".login" />
         <activity android:name=".PokemonGon_shake" />
-        <activity android:name=".CHATBOT" />
+        <activity android:name=".chatbot" />
         <activity android:name=".bg4_3question" />
         <activity android:name=".bg4_2buy" />
         <activity android:name=".EatTogether1_1_interested" />
