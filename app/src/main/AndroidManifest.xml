@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".taoyuan"></activity>
+        <activity android:name=".EatTogether_Memory"></activity>
+        <activity android:name=".taoyuan" />
         <activity android:name=".New" />
         <activity android:name=".layout1" />
         <activity android:name=".layout2_1_share">
