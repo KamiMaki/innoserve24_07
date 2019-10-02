@@ -287,7 +287,7 @@ public class EatTogether1_1 extends AppCompatActivity
         mLungTan7=map.addMarker((new MarkerOptions().position(LungTan7)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
         mLungTan8=map.addMarker((new MarkerOptions().position(LungTan8)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
         mLungTan9=map.addMarker((new MarkerOptions().position(LungTan9)).icon(BitmapDescriptorFactory.fromResource(R.drawable.three_activity)));
-        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)).icon(BitmapDescriptorFactory.fromResource(R.drawable.five_activity)));
+        mLungTan10=map.addMarker((new MarkerOptions().position(LungTan10)).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED)));
         mme=map.addMarker((new MarkerOptions().position(me)).icon(BitmapDescriptorFactory.fromResource(R.drawable.me)));
 
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 15));
