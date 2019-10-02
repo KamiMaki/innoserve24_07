@@ -252,7 +252,7 @@ public class EatTogether1_1 extends AppCompatActivity
 
         else if (id==R.id.recommend)
         {
-
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(LungTan10, 15));
         }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -390,7 +390,7 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         if (marker.equals(mLungTan10))
         {
-            act5ListAlertDialog();
+            recommendListAlertDialog();
             Toast.makeText(this, "上林社區活動中心", Toast.LENGTH_LONG).show();
         }
         return false;
@@ -468,6 +468,26 @@ public class EatTogether1_1 extends AppCompatActivity
     }
     private void act3ListAlertDialog() {
         final String[] ListStr = {"鄭奶奶揪吃飯","溫爺爺揪下棋","杜爺爺揪爬山"};
+        AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
+        actListAlertDialog.setTitle("請挑選一個活動");
+        // 建立List的事件
+        DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //onclick to do
+                eatAlertDialog();
+            }
+        };
+        // 建立按下取消什麼事情都不做的事件
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        };
+        actListAlertDialog.setItems(ListStr, ListClick);
+        actListAlertDialog.setNeutralButton("取消", OkClick);
+        actListAlertDialog.show();
+    }
+    private void recommendListAlertDialog() {
+        final String[] ListStr = {"鄭奶奶揪吃飯\uD83D\uDC4D","溫爺爺揪下棋","杜爺爺揪爬山","陳奶奶揪益智遊戲大賽","林奶奶揪明星三缺一"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
         // 建立List的事件
