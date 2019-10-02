@@ -21,7 +21,7 @@ Button no;
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon_shake.this);
                 builder.setTitle("加好友")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("您已成功加   杜爺爺   為好友")
                         .setPositiveButton("太好了", new DialogInterface.OnClickListener() {
                             @Override
@@ -37,7 +37,7 @@ Button no;
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon_shake.this);
                 builder.setTitle("加好友")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("基於您已經那麼用力搖了\n您還是跟  杜爺爺  成為好友了\n去好友名單確認吧!")
                         .setPositiveButton("那很好啊", new DialogInterface.OnClickListener() {
                             @Override

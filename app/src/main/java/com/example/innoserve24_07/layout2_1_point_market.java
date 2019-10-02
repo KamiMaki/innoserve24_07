@@ -50,7 +50,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                     builder.setTitle("請示出條碼")
-                            .setIcon(R.mipmap.ic_launcher)
+                            .setIcon(R.drawable.oldyeahhh)
                             .setMessage("池上米:30點")
                             .setNegativeButton("關閉", null)
                             .show();
@@ -61,7 +61,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                     builder.setTitle("您的點數不夠!")
-                            .setIcon(R.mipmap.ic_launcher)
+                            .setIcon(R.drawable.oldyeahhh)
                             .setMessage("\n\n請再多走走來集點吧!")
                             .setNegativeButton("我知道了", null)
                             .show();
@@ -72,7 +72,7 @@ public class layout2_1_point_market extends AppCompatActivity {
               {
                   AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                   builder.setTitle("請示出條碼")
-                          .setIcon(R.mipmap.ic_launcher)
+                          .setIcon(R.drawable.oldyeahhh)
                           .setMessage("水壺:70點")
                           .setNegativeButton("關閉", null)
                           .show();
@@ -83,7 +83,7 @@ public class layout2_1_point_market extends AppCompatActivity {
               {
                   AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                   builder.setTitle("您的點數不夠!")
-                          .setIcon(R.mipmap.ic_launcher)
+                          .setIcon(R.drawable.oldyeahhh)
                           .setMessage("\n\n請再多走走來集點吧!")
                           .setNegativeButton("我知道了", null)
                           .show();
@@ -95,7 +95,7 @@ public class layout2_1_point_market extends AppCompatActivity {
               {
                   AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                   builder.setTitle("請示出條碼")
-                          .setIcon(R.mipmap.ic_launcher)
+                          .setIcon(R.drawable.oldyeahhh)
                           .setMessage("醬油:50點")
                           .setNegativeButton("關閉", null)
                           .show();
@@ -106,7 +106,7 @@ public class layout2_1_point_market extends AppCompatActivity {
               {
                   AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                   builder.setTitle("您的點數不夠!")
-                          .setIcon(R.mipmap.ic_launcher)
+                          .setIcon(R.drawable.oldyeahhh)
                           .setMessage("\n\n請再多走走來集點吧!")
                           .setNegativeButton("我知道了", null)
                           .show();
@@ -118,7 +118,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                     builder.setTitle("請示出條碼")
-                            .setIcon(R.mipmap.ic_launcher)
+                            .setIcon(R.drawable.oldyeahhh)
                             .setMessage("衛生紙:10點")
                             .setNegativeButton("關閉", null)
                             .show();
@@ -129,7 +129,7 @@ public class layout2_1_point_market extends AppCompatActivity {
                 {
                     AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                     builder.setTitle("您的點數不夠!")
-                            .setIcon(R.mipmap.ic_launcher)
+                            .setIcon(R.drawable.oldyeahhh)
                             .setMessage("\n\n請再多走走來集點吧!")
                             .setNegativeButton("我知道了", null)
                             .show();
