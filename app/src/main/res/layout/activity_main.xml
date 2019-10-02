@@ -15,14 +15,14 @@
 
     <Button
         android:id="@+id/weather"
-        android:layout_width="94dp"
-        android:layout_height="107dp"
+        android:layout_width="90dp"
+        android:layout_height="76dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.987"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.432" />
 
     <Button
         android:id="@+id/bt1"
@@ -142,5 +142,12 @@
         app:layout_constraintTop_toBottomOf="@+id/bt1"
         app:layout_constraintVertical_bias="0.7"
         app:srcCompat="@drawable/taoy" />
+
+    <Button
+        android:id="@+id/alarm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteX="318dp"
+        tools:layout_editor_absoluteY="379dp" />
 
 </android.support.constraint.ConstraintLayout>

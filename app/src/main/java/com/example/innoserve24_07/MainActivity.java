@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
     Button bt5;
     Button weather;
     Button buysth;
+    Button alarm;
 
     private final static int NOTIFICATION_ID = 0;
     private NotificationManager notificationManager;
@@ -177,6 +178,20 @@ public class MainActivity extends AppCompatActivity {
                                         .show();
                             }
                         })
+                        .show();
+            }
+        });
+
+        alarm = (Button)findViewById(R.id.alarm);
+        alarm.setVisibility(View.VISIBLE);
+        alarm.setBackgroundColor(Color.TRANSPARENT);
+        alarm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("吃藥提醒")
+                        .setIcon(R.mipmap.ic_launcher)
+                        .setMessage("\n早上10點\n糖尿病藥紅包")
                         .show();
             }
         });
