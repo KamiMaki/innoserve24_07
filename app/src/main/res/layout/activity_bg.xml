@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:text="設定"
             android:textAlignment="center"
-            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -137,7 +137,6 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="0dp"
                 android:animateLayoutChanges="false"
-                android:gravity="right"
                 android:orientation="vertical"
                 android:visibility="visible">
 

@@ -52,6 +52,8 @@ public class layout2_1_share extends AppCompatActivity {
 
            }
        });
+
+
    };
 
 

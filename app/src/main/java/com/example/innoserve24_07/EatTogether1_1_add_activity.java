@@ -29,13 +29,13 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eat_together1_1_add_activity);
-        Button add = (Button)findViewById(R.id.add); 
+        /*Button add = (Button)findViewById(R.id.add);
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 EatTogether1_1_add_activity.this.finish();
             }
-        });
+        });*/
         editDate=(EditText)findViewById(R.id.editDate);
         dateText = (TextView)findViewById(R.id.dateText);
         dateButton = (Button)findViewById(R.id.dateButton);

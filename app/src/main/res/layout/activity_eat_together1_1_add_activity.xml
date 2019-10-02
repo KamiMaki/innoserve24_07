@@ -35,6 +35,7 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="活動地點"
                 android:textSize="25sp" />
 
@@ -69,6 +70,7 @@
                 android:id="@+id/textView10"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="活動名稱"
                 android:textSize="25sp" />
 
@@ -81,9 +83,8 @@
 
             <Button
                 android:id="@+id/actbt"
-                android:layout_width="7dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:text="挑選活動" />
 
         </LinearLayout>
@@ -97,6 +98,7 @@
                 android:id="@+id/textDate"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="活動日期"
                 android:textSize="25sp" />
 
@@ -133,6 +135,7 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="活動時間"
                 android:textSize="25sp" />
 
@@ -151,6 +154,7 @@
                 android:id="@+id/dateButton"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="挑選時間"
                 android:textSize="15sp" />
         </LinearLayout>
@@ -165,30 +169,23 @@
                 android:id="@+id/textView12"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:gravity="center"
                 android:text="活動內容"
-                android:textSize="25sp" />
+                android:textSize="25sp"
+                />
 
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:ems="10"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                />
         </LinearLayout>
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
-        android:background="@drawable/add"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.987"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.975" />
+
 
 
 
