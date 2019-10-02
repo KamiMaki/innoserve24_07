@@ -90,7 +90,7 @@ public class EatTogether1_1 extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_eat_together);
-
+//
         SupportMapFragment mapFragment=(SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -235,17 +235,9 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         else if (id == R.id.nav_tools)
         {
-            AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
-            builder.setTitle("活動的回憶")
-                    .setIcon(R.mipmap.ic_launcher)
-                    .setMessage("\n108.04.28 溫爺爺的南極之旅\n\n108.08.24 杜爺爺的剉冰派對\n\n108.10.08 鄭奶奶的唱歌大會\n\n108.10.13 陳奶奶的下午茶\n")
-                    .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-
-                        }
-                    })
-                    .show();
+            Intent intent = new Intent();
+            intent.setClass(EatTogether1_1.this,EatTogether_Memory.class);
+            startActivity(intent);
         }
         else if (id == R.id.nav_share)
         {
@@ -258,7 +250,10 @@ public class EatTogether1_1 extends AppCompatActivity
                     .show();
         }
 
-
+        else if (id==R.id.recommend)
+        {
+            map.moveCamera(CameraUpdateFactory.newLatLngZoom(LungTan10, 15));
+        }
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
@@ -395,7 +390,7 @@ public class EatTogether1_1 extends AppCompatActivity
         }
         if (marker.equals(mLungTan10))
         {
-            act5ListAlertDialog();
+            recommendListAlertDialog();
             Toast.makeText(this, "上林社區活動中心", Toast.LENGTH_LONG).show();
         }
         return false;
@@ -473,6 +468,26 @@ public class EatTogether1_1 extends AppCompatActivity
     }
     private void act3ListAlertDialog() {
         final String[] ListStr = {"鄭奶奶揪吃飯","溫爺爺揪下棋","杜爺爺揪爬山"};
+        AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
+        actListAlertDialog.setTitle("請挑選一個活動");
+        // 建立List的事件
+        DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                //onclick to do
+                eatAlertDialog();
+            }
+        };
+        // 建立按下取消什麼事情都不做的事件
+        DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+            }
+        };
+        actListAlertDialog.setItems(ListStr, ListClick);
+        actListAlertDialog.setNeutralButton("取消", OkClick);
+        actListAlertDialog.show();
+    }
+    private void recommendListAlertDialog() {
+        final String[] ListStr = {"鄭奶奶揪吃飯\uD83D\uDC4D","溫爺爺揪下棋","杜爺爺揪爬山","陳奶奶揪益智遊戲大賽","林奶奶揪明星三缺一"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
         // 建立List的事件

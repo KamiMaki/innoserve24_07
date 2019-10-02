@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
+    <uses-permission android:name="android.permission.VIBRATE" />
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -15,7 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".New"></activity>
+        <activity android:name=".EatTogether_Memory"></activity>
+        <activity android:name=".taoyuan" />
+        <activity android:name=".New" />
         <activity android:name=".layout1" />
         <activity android:name=".layout2_1_share">
             <intent-filter>
@@ -26,7 +28,7 @@
         </activity>
         <activity android:name=".login" />
         <activity android:name=".PokemonGon_shake" />
-        <activity android:name=".CHATBOT" />
+        <activity android:name=".chatbot" />
         <activity android:name=".bg4_3question" />
         <activity android:name=".bg4_2buy" />
         <activity android:name=".EatTogether1_1_interested" />

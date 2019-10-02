@@ -19,9 +19,9 @@
 
             <ImageView
                 android:id="@+id/imageView7"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="179dp"
-                app:srcCompat="@drawable/par3" />
+                app:srcCompat="@drawable/par33" />
 
             <Button
                 android:id="@+id/par3"
@@ -33,7 +33,7 @@
                 android:id="@+id/imageView6"
                 android:layout_width="wrap_content"
                 android:layout_height="201dp"
-                app:srcCompat="@drawable/par1" />
+                app:srcCompat="@drawable/par11" />
 
             <Button
                 android:id="@+id/par2"
@@ -45,7 +45,7 @@
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="219dp"
-                app:srcCompat="@drawable/parr" />
+                app:srcCompat="@drawable/parrr" />
 
             <Button
                 android:id="@+id/par"
@@ -57,7 +57,7 @@
                 android:id="@+id/imageView9"
                 android:layout_width="match_parent"
                 android:layout_height="181dp"
-                app:srcCompat="@drawable/par4" />
+                app:srcCompat="@drawable/par44" />
 
             <Button
                 android:id="@+id/par4"

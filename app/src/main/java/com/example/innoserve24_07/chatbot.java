@@ -7,16 +7,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class CHATBOT extends AppCompatActivity {
- Button line,Medicine;
+public class chatbot extends AppCompatActivity {
+ Button askme,Medicine;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chatbot);
 
-        line=(Button)findViewById(R.id.line);
+        askme=(Button)findViewById(R.id.askme);
         Medicine=(Button)findViewById(R.id.Medicine);
-        line.setOnClickListener(new View.OnClickListener() {
+        askme.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Uri uri = Uri.parse("http://nav.cx/irJd3Vx");//要跳转的网址
