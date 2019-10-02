@@ -108,6 +108,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
             }
         };
+        MyListAlertDialog.setIcon(R.drawable.oldyeahhh);
         MyListAlertDialog.setItems(ListStr, ListClick);
         MyListAlertDialog.setNeutralButton("取消", OkClick);
         MyListAlertDialog.show();
@@ -117,6 +118,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
         final String[] ListStr = {"揪吃飯","來跳舞","泡茶","下棋","爬山","唱歌","益智遊戲大賽","明星三缺一"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
+        actListAlertDialog.setIcon(R.drawable.oldyeahhh);
         // 建立List的事件
         DialogInterface.OnClickListener ListClick = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {

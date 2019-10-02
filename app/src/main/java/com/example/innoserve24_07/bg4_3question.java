@@ -26,7 +26,7 @@ public class bg4_3question extends AppCompatActivity {
            public void onClick(View view) {
                AlertDialog.Builder builder = new AlertDialog.Builder(bg4_3question.this);
                builder.setTitle("請輸入問題與答案:")
-                       .setIcon(R.mipmap.ic_launcher)
+                       .setIcon(R.drawable.oldyeahhh)
                        .setMessage("範例:\nQ:結婚紀念日是什麼時候?\nA:8/31")
                        .setView(hm)
                        .setNegativeButton("新增", new DialogInterface.OnClickListener() {

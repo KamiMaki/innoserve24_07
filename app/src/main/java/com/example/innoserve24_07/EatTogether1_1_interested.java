@@ -26,7 +26,7 @@ public class EatTogether1_1_interested extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
                 builder.setTitle("鄭奶奶揪吃飯")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("您確定要參加嗎?")
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
                             @Override
@@ -46,7 +46,7 @@ public class EatTogether1_1_interested extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
                 builder.setTitle("陳奶奶來跳舞")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("您確定要參加嗎?")
                         .setNegativeButton("不要參加", null)
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
@@ -66,7 +66,7 @@ public class EatTogether1_1_interested extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
                 builder.setTitle("杜爺爺泡茶")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("您確定要參加嗎?")
                         .setNegativeButton("不要參加", null)
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
@@ -87,7 +87,7 @@ public class EatTogether1_1_interested extends AppCompatActivity {
 
                 AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1_interested.this);
                 builder.setTitle("溫爺爺下棋")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("您確定要參加嗎?")
                         .setNegativeButton("不要參加", null)
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
@@ -106,6 +106,7 @@ public class EatTogether1_1_interested extends AppCompatActivity {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
        // MyAlertDialog.setTitle("新活動");
         MyAlertDialog.setMessage("您已成功報名!");
+        MyAlertDialog.setIcon(R.drawable.oldyeahhh);
         DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 // 如果不做任何事情 就會直接關閉 對話方塊
