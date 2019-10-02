@@ -5,10 +5,12 @@ import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.app.Service;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -16,7 +18,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-
+import android.os.Vibrator;
 public class MainActivity extends AppCompatActivity {
 
     Button bt1;
@@ -186,16 +188,23 @@ public class MainActivity extends AppCompatActivity {
         alarm.setVisibility(View.VISIBLE);
         alarm.setBackgroundColor(Color.TRANSPARENT);
         alarm.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
+                setVibrate(500); // 震動 1 秒
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("吃藥提醒")
                         .setIcon(R.mipmap.ic_launcher)
-                        .setMessage("\n早上10點\n糖尿病藥紅包")
+                        .setMessage("早上10點\n糖尿病藥紅包")
+                        .setNegativeButton("好",null)
                         .show();
             }
         });
 
+    }
+    public void setVibrate(int time){
+        Vibrator myVibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
+        myVibrator.vibrate(time);
     }
 }
 
