@@ -8,7 +8,10 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
@@ -29,9 +32,10 @@ public class MainActivity extends AppCompatActivity {
     Button weather;
     Button buysth;
     Button alarm;
-
-    private final static int NOTIFICATION_ID = 0;
-    private NotificationManager notificationManager;
+    long[] vibrate = {0,100,200,300};
+    Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+    /*private final static int NOTIFICATION_ID = 0;
+    private NotificationManager notificationManager;*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +47,8 @@ public class MainActivity extends AppCompatActivity {
         bt5 = (Button)findViewById(R.id.bt5);
 
 
-        notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+        //notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
 /*
         MyApplication myApplication = (MyApplication) getApplicationContext();
         //myApplication.a = 0;
@@ -112,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
         buysth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
+                /*try {
                     Thread.sleep(7000); //1000為1秒
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -123,7 +128,57 @@ public class MainActivity extends AppCompatActivity {
                         .setSmallIcon(android.R.drawable.ic_dialog_email)
                         .setAutoCancel(true)
                         .build();
-                notificationManager.notify(NOTIFICATION_ID, notification);
+                notificationManager.notify(NOTIFICATION_ID, notification);*/
+
+                //Step1. 初始化NotificationManager，取得Notification服務
+                NotificationManager mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
+
+                //Step2. 設定當按下這個通知之後要執行的activity
+                Intent notifyIntent = new Intent(MainActivity.this, MainActivity.class);
+                notifyIntent.setFlags( Intent.FLAG_ACTIVITY_NEW_TASK);
+                PendingIntent appIntent = PendingIntent.getActivity(MainActivity.this, 0, notifyIntent, 0);
+
+                //Step3. 透過 Notification.Builder 來建構 notification，
+                //並直接使用其.build() 的方法將設定好屬性的 Builder 轉換
+                //成 notification，最後開始將顯示通知訊息發送至狀態列上。
+                Notification notification
+                        = new Notification.Builder(MainActivity.this)
+                        .setContentIntent(appIntent)
+                        .setSmallIcon(android.R.drawable.ic_dialog_email) // 設置狀態列裡面的圖示（小圖示）　　
+                        .setLargeIcon(BitmapFactory.decodeResource(MainActivity.this.getResources(), android.R.drawable.ic_dialog_email)) // 下拉下拉清單裡面的圖示（大圖示）
+                        //.setTicker("notification on status bar.") // 設置狀態列的顯示的資訊
+                        //.setWhen(System.currentTimeMillis())// 設置時間發生時間
+                        //.setAutoCancel(false) // 設置通知被使用者點擊後是否清除  //notification.flags = Notification.FLAG_AUTO_CANCEL;
+                        .setContentTitle("日用品購買提醒") // 設置下拉清單裡的標題
+                        .setContentText("要添購衛生紙")// 設置上下文內容
+                        .setOngoing(true)      //true使notification變為ongoing，用戶不能手動清除// notification.flags = Notification.FLAG_ONGOING_EVENT; notification.flags = Notification.FLAG_NO_CLEAR;
+                        .setDefaults(Notification.DEFAULT_ALL)
+                         .setDefaults(Notification.DEFAULT_VIBRATE)
+                         .setDefaults(Notification.DEFAULT_LIGHTS)
+                         .setDefaults(Notification.DEFAULT_LIGHTS | Notification.DEFAULT_SOUND)
+
+                        .setVibrate(vibrate)
+                        .setSound(uri)
+                        .setLights(0xff00ff00, 300, 1000)
+
+                        .build();
+
+                // 將此通知放到通知欄的"Ongoing"即"正在運行"組中
+                notification.flags = Notification.FLAG_ONGOING_EVENT;
+
+                // 表明在點擊了通知欄中的"清除通知"後，此通知不清除，
+                // 經常與FLAG_ONGOING_EVENT一起使用
+                notification.flags = Notification.FLAG_NO_CLEAR;
+
+                //閃爍燈光
+                notification.flags = Notification.FLAG_SHOW_LIGHTS;
+
+                // 重複的聲響,直到用戶響應。
+                notification.flags = Notification.FLAG_INSISTENT;
+
+
+                // 把指定ID的通知持久的發送到狀態條上.
+                mNotificationManager.notify(0, notification);
             }
         });
 
