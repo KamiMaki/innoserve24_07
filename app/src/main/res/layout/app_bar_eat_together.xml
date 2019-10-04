@@ -30,16 +30,13 @@
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
-        android:layout_height="205dp"
+        android:layout_height="200dp"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="40dp"
         android:src="@drawable/add"
-        android:tint="#03E03434"
-        app:background="@drawable/add"
-        app:backgroundTint="#34786A"
-        app:backgroundTintMode="multiply"
-        app:fabSize="normal" />
+
+        app:maxImageSize="58dp" />
 
 
 
