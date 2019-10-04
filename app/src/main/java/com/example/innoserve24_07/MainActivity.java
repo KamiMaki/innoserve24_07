@@ -144,8 +144,8 @@ public class MainActivity extends AppCompatActivity {
                 Notification notification
                         = new Notification.Builder(MainActivity.this)
                         .setContentIntent(appIntent)
-                        .setSmallIcon(android.R.drawable.ic_dialog_email) // 設置狀態列裡面的圖示（小圖示）　　
-                        .setLargeIcon(BitmapFactory.decodeResource(MainActivity.this.getResources(), android.R.drawable.ic_dialog_email)) // 下拉下拉清單裡面的圖示（大圖示）
+                        .setSmallIcon(R.drawable.logo) // 設置狀態列裡面的圖示（小圖示）　　
+                        .setLargeIcon(BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.logo)) // 下拉下拉清單裡面的圖示（大圖示）
                         //.setTicker("notification on status bar.") // 設置狀態列的顯示的資訊
                         //.setWhen(System.currentTimeMillis())// 設置時間發生時間
                         //.setAutoCancel(false) // 設置通知被使用者點擊後是否清除  //notification.flags = Notification.FLAG_AUTO_CANCEL;
