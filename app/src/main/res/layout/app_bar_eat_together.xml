@@ -33,10 +33,10 @@
         android:layout_height="200dp"
         android:layout_gravity="bottom|end"
         android:layout_marginRight="15dp"
-        android:layout_marginBottom="60dp"
+        android:layout_marginBottom="40dp"
         android:src="@drawable/add"
 
-        app:maxImageSize="55dp" />
+        app:maxImageSize="58dp" />
 
 
 
