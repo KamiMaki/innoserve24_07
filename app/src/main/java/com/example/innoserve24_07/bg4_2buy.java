@@ -39,6 +39,7 @@ public class bg4_2buy extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(bg4_2buy.this);
                 builder.setTitle("新增項目")
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("請輸入項目:")
                         .setView(item)
                         .setNegativeButton("關閉",null)
@@ -49,6 +50,7 @@ public class bg4_2buy extends AppCompatActivity {
                                 buyText.setText(string);
                                 AlertDialog.Builder builder=new AlertDialog.Builder(bg4_2buy.this);
                                 builder.setTitle("新增項目")
+                                        .setIcon(R.drawable.oldyeahhh)
                                         .setMessage("請輸入幾天購買一次:\n舉例:20")
                                         .setView(day)
                                         .setPositiveButton("新增", new DialogInterface.OnClickListener() {
@@ -72,7 +74,7 @@ public class bg4_2buy extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder=new AlertDialog.Builder(bg4_2buy.this);
                 builder.setTitle(item.getText())
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage(day.getText()+"天購買一次\n下次購買時間 : 11月30日")
                         .setPositiveButton("關閉", new DialogInterface.OnClickListener() {
                             @Override
@@ -95,7 +97,7 @@ public class bg4_2buy extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(bg4_2buy.this);
 
                 builder.setTitle("維骨力")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("100天購買一次\n下次購買時間：12月5日")
                         .setNegativeButton("關閉", null)
                         .show();
@@ -105,7 +107,7 @@ public class bg4_2buy extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(bg4_2buy.this);
 
                 builder.setTitle("奶粉")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("20天購買一次\n下次購買時間：11月15日")
                         .setNegativeButton("關閉", null)
                         .show();
@@ -115,7 +117,7 @@ public class bg4_2buy extends AppCompatActivity {
                 AlertDialog.Builder builder = new AlertDialog.Builder(bg4_2buy.this);
 
                 builder.setTitle("假牙清潔錠")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("60天購買一次\n下次購買時間：11月13日")
                         .setNegativeButton("關閉", null)
                         .show();

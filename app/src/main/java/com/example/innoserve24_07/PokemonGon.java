@@ -171,7 +171,7 @@ int flag=0;
             {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
                 builder.setTitle("打卡成功!!")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("今天依然健康呢!")
                         .setNegativeButton("太好了", new DialogInterface.OnClickListener() {
                             @Override
@@ -188,7 +188,7 @@ int flag=0;
             {
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
                 builder.setTitle("加好友")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("請搖一搖來加好友")
                         .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
                             @Override
@@ -446,7 +446,7 @@ int flag=0;
                 // 達到搖一搖甩動後要做的事情
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
                 builder.setTitle("出大事!!")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
                         .setNegativeButton("我很好",null)
                         .setCancelable(true)

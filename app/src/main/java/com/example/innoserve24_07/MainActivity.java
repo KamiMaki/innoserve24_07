@@ -10,8 +10,13 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
+
 import android.media.RingtoneManager;
 import android.net.Uri;
+
+import android.graphics.drawable.Drawable;
+import android.graphics.drawable.Icon;
+
 import android.os.Build;
 import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
@@ -32,10 +37,15 @@ public class MainActivity extends AppCompatActivity {
     Button weather;
     Button buysth;
     Button alarm;
+
     long[] vibrate = {0,100,200,300};
     Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
     /*private final static int NOTIFICATION_ID = 0;
     private NotificationManager notificationManager;*/
+
+    private final static int NOTIFICATION_ID = 0;
+    private NotificationManager notificationManager;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -182,7 +192,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
         final EditText input = new EditText(this);
         weather = (Button)findViewById(R.id.weather);
         weather.setVisibility(View.VISIBLE);
@@ -192,14 +201,14 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("今天天氣晴\n溫度約27~30度")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("\n天氣好出去走走之餘\n要小心不要中暑喔!")
                         .setPositiveButton("我知道了", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                 builder.setTitle("健康資訊")
-                                        .setIcon(R.mipmap.ic_launcher)
+                                        .setIcon(R.drawable.oldyeahhh)
                                         .setMessage("\n65歲以上長者免費肺炎鏈球菌疫苗接種\n\n您接種了嗎?\n\n相關資訊請洽委蝦密")
                                         .setNegativeButton("相關資訊", new DialogInterface.OnClickListener() {
                                             @Override
@@ -214,7 +223,7 @@ public class MainActivity extends AppCompatActivity {
                                             public void onClick(DialogInterface dialog, int which) {
                                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                                 builder.setTitle("每日小問題!!")
-                                                        .setIcon(R.mipmap.ic_launcher)
+                                                        .setIcon(R.drawable.oldyeahhh)
                                                         .setMessage("前任的總統是誰?\n答案:")
                                                         .setView(input)
                                                         .setPositiveButton("確定", new DialogInterface.OnClickListener() {
@@ -222,7 +231,7 @@ public class MainActivity extends AppCompatActivity {
                                                             public void onClick(DialogInterface dialog, int which) {
                                                                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                                                                 builder.setTitle("每日小問題!!")
-                                                                        .setIcon(R.mipmap.ic_launcher)
+                                                                        .setIcon(R.drawable.oldyeahhh)
                                                                         .setMessage("\n恭喜答對!!\n\n今天依然健康呢!\n沒有失智喔!放心\n")
                                                                         .setNegativeButton("太好了",null)
                                                                         .show();
@@ -249,7 +258,7 @@ public class MainActivity extends AppCompatActivity {
                 setVibrate(500); // 震動 1 秒
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("吃藥提醒")
-                        .setIcon(R.mipmap.ic_launcher)
+                        .setIcon(R.drawable.oldyeahhh)
                         .setMessage("早上10點\n糖尿病藥紅包")
                         .setNegativeButton("好",null)
                         .show();
