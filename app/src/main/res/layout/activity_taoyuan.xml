@@ -7,28 +7,79 @@
     android:background="@drawable/back3"
     tools:context=".taoyuan">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+    <Button
+        android:id="@+id/tao2"
+        android:layout_width="150dp"
+        android:layout_height="200dp"
+        android:background="@drawable/taolookup"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.079" />
 
-        <Button
-            android:id="@+id/tao2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="點數查詢" />
+    <Button
+        android:id="@+id/tao1"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/taocard"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.881"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.48" />
 
-        <Button
-            android:id="@+id/tao1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="市民卡" />
+    <Button
+        android:id="@+id/tao3"
+        android:layout_width="200dp"
+        android:layout_height="150dp"
+        android:background="@drawable/taoannounce"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.226"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.877" />
 
-        <Button
-            android:id="@+id/tao3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="市府公告" />
-    </LinearLayout>
+    <ImageView
+        android:id="@+id/tiv1"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.924"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tao1"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/lookup" />
+
+    <ImageView
+        android:id="@+id/tiv2"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.145"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tao2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/card" />
+
+    <ImageView
+        android:id="@+id/tiv3"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.227"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tao3"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/announce" />
 
 </android.support.constraint.ConstraintLayout>
