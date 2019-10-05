@@ -6,6 +6,8 @@ import android.app.Fragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -24,6 +26,7 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -127,6 +130,8 @@ int flag=0;
     //觸發間隔時間
     private static final int UPTATE_INTERVAL_TIME1= 200;
     private static final int UPTATE_INTERVAL_TIME = 100;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -205,6 +210,7 @@ int flag=0;
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         map=googleMap;
         mLungTan1=map.addMarker((new MarkerOptions().position(LungTan1).icon(BitmapDescriptorFactory.fromResource(R.drawable.office))));
         mLungTan2=map.addMarker((new MarkerOptions().position(LungTan2).icon(BitmapDescriptorFactory.fromResource(R.drawable.office))));
@@ -222,26 +228,26 @@ int flag=0;
         mLungTan14=map.addMarker((new MarkerOptions().position(LungTan14).icon(BitmapDescriptorFactory.fromResource(R.drawable.convenience_store))));
         mLungTan15=map.addMarker((new MarkerOptions().position(LungTan15).icon(BitmapDescriptorFactory.fromResource(R.drawable.convenience_store))));
         mLungTan16=map.addMarker((new MarkerOptions().position(LungTan16).icon(BitmapDescriptorFactory.fromResource(R.drawable.convenience_store))));
-        mLungTanPeole1=map.addMarker(new MarkerOptions().position(LungTanPeople1).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole2=map.addMarker(new MarkerOptions().position(LungTanPeople2).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole3=map.addMarker(new MarkerOptions().position(LungTanPeople3).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole4=map.addMarker(new MarkerOptions().position(LungTanPeople4).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole5=map.addMarker(new MarkerOptions().position(LungTanPeople5).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole6=map.addMarker(new MarkerOptions().position(LungTanPeople6).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole7=map.addMarker(new MarkerOptions().position(LungTanPeople7).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole8=map.addMarker(new MarkerOptions().position(LungTanPeople8).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole9=map.addMarker(new MarkerOptions().position(LungTanPeople9).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole10=map.addMarker(new MarkerOptions().position(LungTanPeople10).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole11=map.addMarker(new MarkerOptions().position(LungTanPeople11).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole12=map.addMarker(new MarkerOptions().position(LungTanPeople12).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole13=map.addMarker(new MarkerOptions().position(LungTanPeople13).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole14=map.addMarker(new MarkerOptions().position(LungTanPeople14).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole15=map.addMarker(new MarkerOptions().position(LungTanPeople15).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole16=map.addMarker(new MarkerOptions().position(LungTanPeople16).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole17=map.addMarker(new MarkerOptions().position(LungTanPeople17).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole18=map.addMarker(new MarkerOptions().position(LungTanPeople18).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
-        mLungTanPeole19=map.addMarker(new MarkerOptions().position(LungTanPeople19).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandpa)));
-        mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.fromResource(R.drawable.grandma)));
+        mLungTanPeole1=map.addMarker(new MarkerOptions().position(LungTanPeople1).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole2=map.addMarker(new MarkerOptions().position(LungTanPeople2).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole3=map.addMarker(new MarkerOptions().position(LungTanPeople3).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole4=map.addMarker(new MarkerOptions().position(LungTanPeople4).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole5=map.addMarker(new MarkerOptions().position(LungTanPeople5).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole6=map.addMarker(new MarkerOptions().position(LungTanPeople6).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole7=map.addMarker(new MarkerOptions().position(LungTanPeople7).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole8=map.addMarker(new MarkerOptions().position(LungTanPeople8).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole9=map.addMarker(new MarkerOptions().position(LungTanPeople9).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole10=map.addMarker(new MarkerOptions().position(LungTanPeople10).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole11=map.addMarker(new MarkerOptions().position(LungTanPeople11).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole12=map.addMarker(new MarkerOptions().position(LungTanPeople12).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole13=map.addMarker(new MarkerOptions().position(LungTanPeople13).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole14=map.addMarker(new MarkerOptions().position(LungTanPeople14).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole15=map.addMarker(new MarkerOptions().position(LungTanPeople15).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole16=map.addMarker(new MarkerOptions().position(LungTanPeople16).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole17=map.addMarker(new MarkerOptions().position(LungTanPeople17).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole18=map.addMarker(new MarkerOptions().position(LungTanPeople18).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole19=map.addMarker(new MarkerOptions().position(LungTanPeople19).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
+        mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.fromResource(R.drawable.grand_parent)));
         // 改標記符號這樣寫             mLungTanPeole20=map.addMarker(new MarkerOptions().position(LungTanPeople20).icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE)));
         mme=map.addMarker(new MarkerOptions().position(me).icon(BitmapDescriptorFactory.fromResource(R.drawable.me)));
         map.moveCamera(CameraUpdateFactory.newLatLngZoom(me, 18));
