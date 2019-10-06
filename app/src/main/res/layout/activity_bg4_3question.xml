@@ -50,12 +50,6 @@
                 android:text="Q：今天是幾年幾月幾日?\nA：2019年8月24日\n"
                 android:textSize="36sp" />
 
-            <TextView
-                android:id="@+id/q2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Q：今天是星期幾?\nA：今天是星期六\n"
-                android:textSize="36sp" />
 
             <TextView
                 android:id="@+id/q3"
@@ -77,14 +71,20 @@
                 android:id="@+id/q5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q：您的媽媽叫什麼名字?\nA：皮卡丘\n"
+                android:text="Q：好朋友是誰？\nA：王奶奶\n"
+                android:textSize="36sp" />
+            <TextView
+                android:id="@+id/q2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Q：今天是星期幾?\nA：今天是星期六\n"
                 android:textSize="36sp" />
 
             <TextView
                 android:id="@+id/q6"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Q：前任的總統是誰？\nA：馬英九"
+                android:text="Q：寵物名字？\nA：小黃"
                 android:textSize="36sp" />
 
             <TextView
@@ -98,8 +98,8 @@
     <Button
 
         android:id="@+id/bt6"
-        android:layout_width="100dp"
-        android:layout_height="60dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:background="@drawable/add"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -15,20 +15,20 @@
         <TextView
             android:id="@+id/textView4"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="60dp"
             android:text="設定"
             android:textAlignment="center"
             android:textSize="40sp" />
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal">
 
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="250dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical">
 
                 <TextView
@@ -83,13 +83,14 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="62dp"
+                android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:layout_marginRight="3.0dp"
                 android:orientation="vertical">
 
                 <Button
                     android:id="@+id/bm"
-                    android:layout_width="60dp"
+                    android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginBottom="3dp"
@@ -97,7 +98,7 @@
 
                 <Button
                     android:id="@+id/bb"
-                    android:layout_width="60dp"
+                    android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginBottom="3dp"
@@ -105,85 +106,73 @@
 
                 <Button
                     android:id="@+id/bq"
-                    android:layout_width="60dp"
+                    android:layout_width="34dp"
                     android:layout_height="34dp"
                     android:layout_marginTop="3dp"
                     android:layout_marginBottom="3dp"
                     android:background="@drawable/add"
                     android:visibility="visible" />
 
-                <Button
-                    android:id="@+id/bh"
-                    android:layout_width="60dp"
-                    android:layout_height="34dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:background="@drawable/add"
-                    android:visibility="invisible" />
-
-                <Button
-                    android:id="@+id/bw"
-                    android:layout_width="60dp"
-                    android:layout_height="34dp"
-                    android:layout_marginTop="3dp"
-                    android:layout_marginBottom="3dp"
-                    android:background="@drawable/add"
-                    android:visibility="invisible" />
-
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_marginRight="0dp"
-                android:animateLayoutChanges="false"
-                android:orientation="vertical"
-                android:visibility="visible">
 
-                <ToggleButton
-                    android:id="@+id/btmedicine"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/togglebutton_selector"
-                    android:textSize="0sp"
-                    android:visibility="visible" />
-
-                <ToggleButton
-                    android:id="@+id/btbuy"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/togglebutton_selector"
-                    android:textSize="0dp" />
-
-                <ToggleButton
-                    android:id="@+id/btques"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/togglebutton_selector"
-                    android:textSize="0dp" />
-
-                <ToggleButton
-                    android:id="@+id/bthealth"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/togglebutton_selector"
-                    android:textSize="0dp" />
-
-                <ToggleButton
-                    android:id="@+id/btweather"
-                    android:layout_width="50dp"
-                    android:layout_height="30dp"
-                    android:layout_marginBottom="10dp"
-                    android:background="@drawable/togglebutton_selector"
-                    android:textSize="0dp" />
-
-            </LinearLayout>
 
         </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="false"
+        android:gravity="right"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="60dp" />
+
+        <ToggleButton
+            android:id="@+id/btmedicine"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textSize="0sp"
+            android:visibility="visible" />
+
+        <ToggleButton
+            android:id="@+id/btbuy"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textSize="0dp" />
+
+        <ToggleButton
+            android:id="@+id/btques"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textSize="0dp" />
+
+        <ToggleButton
+            android:id="@+id/bthealth"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textSize="0dp" />
+
+        <ToggleButton
+            android:id="@+id/btweather"
+            android:layout_width="50dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/togglebutton_selector"
+            android:textSize="0dp" />
+
     </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -22,8 +22,7 @@ public class bg extends AppCompatActivity {
         bm=(Button)findViewById(R.id.bm);
         bb=(Button)findViewById(R.id.bb);
         bq=(Button)findViewById(R.id.bq);
-        bh=(Button)findViewById(R.id.bh);
-        bw=(Button)findViewById(R.id.bw);
+
 
         bm.setOnClickListener(new View.OnClickListener() {
             @Override

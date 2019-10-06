@@ -127,11 +127,11 @@ public class MainActivity extends AppCompatActivity {
         buysth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*try {
-                    Thread.sleep(7000); //1000為1秒
+                try {
+                    Thread.sleep(9000); //1000為1秒
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }
+                }/*
                 Notification notification = new Notification.Builder(MainActivity.this)
                         .setContentTitle("日用品購買提醒")
                         .setContentText("要添購衛生紙")
@@ -154,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 Notification notification
                         = new Notification.Builder(MainActivity.this)
                         .setContentIntent(appIntent)
-                        .setSmallIcon(R.drawable.logo) // 設置狀態列裡面的圖示（小圖示）　　
+                        .setSmallIcon(android.R.drawable.ic_dialog_email) // 設置狀態列裡面的圖示（小圖示）　　
                         .setLargeIcon(BitmapFactory.decodeResource(MainActivity.this.getResources(), R.drawable.logo)) // 下拉下拉清單裡面的圖示（大圖示）
                         //.setTicker("notification on status bar.") // 設置狀態列的顯示的資訊
                         //.setWhen(System.currentTimeMillis())// 設置時間發生時間
