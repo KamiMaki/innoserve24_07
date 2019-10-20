@@ -75,11 +75,12 @@
                     android:textSize="22sp" />
 
                 <EditText
-                    android:id="@+id/et_phone_no"
+                    android:id="@+id/editText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName" />
+                    android:inputType="phone" />
+
             </LinearLayout>
 
             <LinearLayout
