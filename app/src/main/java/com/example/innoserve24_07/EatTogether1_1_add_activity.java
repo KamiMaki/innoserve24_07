@@ -25,6 +25,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
     private Button listButton;
     private TextView activity;
     private Button actbt;
+    private Button accept;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,6 +74,13 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
                 actListAlertDialog();
             }
         });
+        accept = (Button)findViewById(R.id.accept);
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EatTogether1_1_add_activity.this.finish();
+            }
+        });
     }
     public void datePicker(View v){
         Calendar calendar= Calendar.getInstance();
@@ -115,7 +123,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
     }
     AlertDialog actListAlertDialog;
     private void actListAlertDialog() {
-        final String[] ListStr = {"揪吃飯","來跳舞","泡茶","下棋","爬山","唱歌","益智遊戲大賽","明星三缺一"};
+        final String[] ListStr = {"揪吃飯","來跳舞","泡茶","教做菜","下棋","爬山","唱歌","益智遊戲大賽","明星三缺一"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
         actListAlertDialog.setIcon(R.drawable.oldyeahhh);
