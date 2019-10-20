@@ -49,7 +49,7 @@ public class taoyuan_NFC extends AppCompatActivity {
             intent1.setClass(this,taoyuan_point.class);
             startActivity(intent1);
         }
-        
+
     }
     private String ByteArrayToHexString(byte[] inarray) {
         int i, j, in;
