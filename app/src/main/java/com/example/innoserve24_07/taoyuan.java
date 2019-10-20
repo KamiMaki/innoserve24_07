@@ -21,7 +21,7 @@ public class taoyuan extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent();
-                intent.setClass(taoyuan.this,taoyuan_point.class);
+                intent.setClass(taoyuan.this,taoyuan_NFC.class);
                 startActivity(intent);
 
             }
