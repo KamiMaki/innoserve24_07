@@ -81,7 +81,7 @@ public class EatTogether1_1 extends AppCompatActivity
     private static final LatLng me = new LatLng(24.937601, 121.224165);
     private Marker mme;
 
-    private String[] tobuy = new String[] {"李爺爺","林奶奶","杜爺爺","張奶奶","邱奶奶","何奶奶","胡爺爺","吳爺爺"};
+    private String[] tobuy = new String[] {"李伯源","林荷婷","杜知翰","張竟汝","邱靜宜","何品萱","胡照晨","吳宗瑞"};
     private boolean[] bechecked=new boolean[tobuy.length];
     int flag =0;
     int yy=0;
@@ -124,7 +124,7 @@ public class EatTogether1_1 extends AppCompatActivity
                 AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
                 builder.setTitle("邀請通知!")
                         .setIcon(R.drawable.oldyeahhh)
-                        .setMessage("陳品蓁   邀請您參加\n益智遊戲大賽   請問您是否參加?")
+                        .setMessage("陳品蓁   邀請您參加\n教做菜   請問您是否參加?")
                         .setNeutralButton("不用了",null)
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
                             @Override
@@ -196,7 +196,7 @@ public class EatTogether1_1 extends AppCompatActivity
               AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
               builder.setTitle("以下是您主辦的活動")
                       .setIcon(R.drawable.oldyeahhh)
-                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭資頤\n                   溫品堯\n                   謝晴雯\n                   方德霖\n\n總共:    4   人參加\n\n")
+                      .setMessage("\n教做菜:\n\n參加人員:\n                   鄭資頤\n                   溫品堯\n                   謝晴雯\n                   方德霖\n\n總共:    4   人參加\n\n")
                       .setNeutralButton("關閉",null)
                       .setPositiveButton("邀請好友", new DialogInterface.OnClickListener() {
                           @Override
