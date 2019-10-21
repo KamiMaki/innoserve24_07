@@ -124,7 +124,7 @@ public class EatTogether1_1 extends AppCompatActivity
                 AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
                 builder.setTitle("邀請通知!")
                         .setIcon(R.drawable.oldyeahhh)
-                        .setMessage("陳奶奶   邀請您參加\n益智遊戲大賽   請問您是否參加?")
+                        .setMessage("陳品蓁   邀請您參加\n益智遊戲大賽   請問您是否參加?")
                         .setNeutralButton("不用了",null)
                         .setPositiveButton("我要參加", new DialogInterface.OnClickListener() {
                             @Override
@@ -196,7 +196,7 @@ public class EatTogether1_1 extends AppCompatActivity
               AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
               builder.setTitle("以下是您主辦的活動")
                       .setIcon(R.drawable.oldyeahhh)
-                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   謝奶奶\n                   方爺爺\n\n總共:    4   人參加\n\n")
+                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭資頤\n                   溫品堯\n                   謝晴雯\n                   方德霖\n\n總共:    4   人參加\n\n")
                       .setNeutralButton("關閉",null)
                       .setPositiveButton("邀請好友", new DialogInterface.OnClickListener() {
                           @Override
@@ -231,7 +231,7 @@ public class EatTogether1_1 extends AppCompatActivity
               AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
               builder.setTitle("以下是您主辦的活動")
                       .setIcon(R.drawable.oldyeahhh)
-                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭奶奶\n                   溫爺爺\n                   謝奶奶\n                   方爺爺\n                   杜爺爺\n\n總共:    5   人參加\n\n")
+                      .setMessage("\n益智遊戲大賽:\n\n參加人員:\n                   鄭資頤\n                   溫品堯\n                   謝晴雯\n                   方德霖\n                   杜知翰\n\n總共:    5   人參加\n\n")
                       .setPositiveButton("關閉",null)
                       .show();
           }
@@ -247,7 +247,7 @@ public class EatTogether1_1 extends AppCompatActivity
             AlertDialog.Builder builder = new AlertDialog.Builder(EatTogether1_1.this);
             builder.setTitle("好友名單:")
                     .setIcon(R.drawable.oldyeahhh)
-                    .setMessage("\n溫爺爺\n\n杜爺爺\n\n鄭奶奶\n\n陳奶奶\n")
+                    .setMessage("\n溫品堯\n\n杜知翰\n\n鄭資頤\n\n陳品蓁\n")
                     .setPositiveButton("關閉", null)
 
                     .show();
@@ -418,7 +418,7 @@ public class EatTogether1_1 extends AppCompatActivity
 
     private void eatAlertDialog() {
         AlertDialog.Builder MyAlertDialog = new AlertDialog.Builder(this);
-        MyAlertDialog.setTitle("活動:  鄭奶奶揪吃飯");
+        MyAlertDialog.setTitle("活動:  鄭資頤揪吃飯");
         MyAlertDialog.setIcon(R.drawable.oldyeahhh);
         MyAlertDialog.setMessage("\n活動地點:社區活動中心\n\n活動日期:108.07.28\n\n活動時間:11:30\n\n活動內容:大家每個人帶一道菜來，一人一道就有一桌菜了\n\n");
         DialogInterface.OnClickListener OkClick = new DialogInterface.OnClickListener() {
@@ -454,7 +454,7 @@ public class EatTogether1_1 extends AppCompatActivity
         MyAlertDialog.show();
     }
     private void act5ListAlertDialog() {
-        final String[] ListStr = {"鄭奶奶揪吃飯","溫爺爺揪下棋","杜爺爺揪爬山","陳奶奶揪益智遊戲大賽","林奶奶揪明星三缺一"};
+        final String[] ListStr = {"鄭資頤揪吃飯","溫品堯揪下棋","杜知翰揪爬山","陳品蓁揪益智遊戲大賽","林荷婷揪明星三缺一"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
         actListAlertDialog.setIcon(R.drawable.oldyeahhh);
@@ -475,7 +475,7 @@ public class EatTogether1_1 extends AppCompatActivity
         actListAlertDialog.show();
     }
     private void act3ListAlertDialog() {
-        final String[] ListStr = {"鄭奶奶揪吃飯","溫爺爺揪下棋","杜爺爺揪爬山"};
+        final String[] ListStr = {"鄭資頤揪吃飯","溫品堯揪下棋","杜知翰揪爬山","陳品蓁教做菜"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
         actListAlertDialog.setIcon(R.drawable.oldyeahhh);
@@ -496,7 +496,7 @@ public class EatTogether1_1 extends AppCompatActivity
         actListAlertDialog.show();
     }
     private void recommendListAlertDialog() {
-        final String[] ListStr = {"鄭奶奶揪吃飯\uD83D\uDC4D","溫爺爺揪下棋","杜爺爺揪爬山","陳奶奶揪益智遊戲大賽","林奶奶揪明星三缺一"};
+        final String[] ListStr = {"鄭資頤揪吃飯\uD83D\uDC4D","溫品堯揪下棋","杜知翰揪爬山","陳品蓁揪益智遊戲大賽","林荷婷揪明星三缺一"};
         AlertDialog.Builder actListAlertDialog = new AlertDialog.Builder(this);
         actListAlertDialog.setTitle("請挑選一個活動");
         actListAlertDialog.setIcon(R.drawable.oldyeahhh);
