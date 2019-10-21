@@ -447,7 +447,7 @@ int flag=0;
             // 體感(Sensor)甩動力道速度公式
             mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
             // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
-
+            /*
             if (mSpeed >= SPEED_SHRESHOLD) {
                 // 達到搖一搖甩動後要做的事情
                 AlertDialog.Builder builder = new AlertDialog.Builder(PokemonGon.this);
@@ -469,7 +469,7 @@ int flag=0;
                         }
                     }, 5000);
             }
-
+            */
         }
 
         public void onAccuracyChanged(Sensor sensor, int accuracy) {
