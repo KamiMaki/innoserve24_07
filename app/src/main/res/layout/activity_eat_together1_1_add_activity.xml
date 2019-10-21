@@ -7,20 +7,21 @@
     android:background="@drawable/back3"
     tools:context=".EatTogether1_1_add_activity">
 
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:text="新增一個活動"
+        android:textSize="40sp"
+        tools:layout_editor_absoluteX="86dp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         tools:layout_editor_absoluteX="-721dp"
         tools:layout_editor_absoluteY="-39dp">
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_gravity="center"
-            android:text="新增一個活動"
-            android:textSize="40sp" />
 
         <Space
             android:layout_width="match_parent"
