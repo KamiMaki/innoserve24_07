@@ -18,6 +18,7 @@
             android:layout_height="60dp"
             android:text="設定"
             android:textAlignment="center"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="40sp" />
 
         <LinearLayout
