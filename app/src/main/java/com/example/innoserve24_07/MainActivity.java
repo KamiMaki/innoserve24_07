@@ -20,6 +20,7 @@ import android.graphics.drawable.Icon;
 import android.os.Build;
 import android.os.Vibrator;
 import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,6 +28,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.os.Vibrator;
+
+import static com.example.innoserve24_07.pass_through.CHANNEL_1_ID;
+
 public class MainActivity extends AppCompatActivity {
 
     Button bt1;
@@ -35,16 +39,17 @@ public class MainActivity extends AppCompatActivity {
     Button bt4;
     Button bt5;
     Button weather;
-    Button buysth;
+    //Button buysth;
     Button alarm;
+    Button pass_through;
+    private NotificationManagerCompat notificationManager;
 
     long[] vibrate = {0,100,200,300};
     Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
     /*private final static int NOTIFICATION_ID = 0;
     private NotificationManager notificationManager;*/
 
-    private final static int NOTIFICATION_ID = 0;
-    private NotificationManager notificationManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,8 +61,9 @@ public class MainActivity extends AppCompatActivity {
         bt4 = (Button)findViewById(R.id.bt4);
         bt5 = (Button)findViewById(R.id.bt5);
 
+        notificationManager=NotificationManagerCompat.from(this);
+        // notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        //notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
 /*
         MyApplication myApplication = (MyApplication) getApplicationContext();
@@ -121,24 +127,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buysth=(Button)findViewById(R.id.buysth) ;
-        buysth.setVisibility(View.VISIBLE);
-        buysth.setBackgroundColor(Color.TRANSPARENT);
-        buysth.setOnClickListener(new View.OnClickListener() {
+        //buysth=(Button)findViewById(R.id.buysth) ;
+        //buysth.setVisibility(View.VISIBLE);
+        //buysth.setBackgroundColor(Color.TRANSPARENT);
+        /*buysth.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     Thread.sleep(9000); //1000為1秒
                 } catch (InterruptedException e) {
                     e.printStackTrace();
-                }/*
+                }*//*
                 Notification notification = new Notification.Builder(MainActivity.this)
                         .setContentTitle("日用品購買提醒")
                         .setContentText("要添購衛生紙")
                         .setSmallIcon(android.R.drawable.ic_dialog_email)
                         .setAutoCancel(true)
                         .build();
-                notificationManager.notify(NOTIFICATION_ID, notification);*/
+                notificationManager.notify(NOTIFICATION_ID, notification);
 
                 //Step1. 初始化NotificationManager，取得Notification服務
                 NotificationManager mNotificationManager = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
@@ -190,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
                 // 把指定ID的通知持久的發送到狀態條上.
                 mNotificationManager.notify(0, notification);
             }
-        });
+        });*/
 
         final EditText input = new EditText(this);
         weather = (Button)findViewById(R.id.weather);
@@ -265,10 +271,36 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        pass_through = (Button)findViewById(R.id.pass_through);
+        pass_through.setVisibility(View.VISIBLE);
+        pass_through.setBackgroundColor(Color.TRANSPARENT);
+        pass_through.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sendOnChannel1(view);
+            }
+        });
+
     }
     public void setVibrate(int time){
         Vibrator myVibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
         myVibrator.vibrate(time);
+    }
+
+    public void sendOnChannel1(View v ){
+        try {
+            Thread.sleep(9000); //1000為1秒
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        Notification notification =new NotificationCompat.Builder(this,CHANNEL_1_ID)
+                .setSmallIcon(R.drawable.notice)
+                .setContentTitle("日用品購買提醒")
+                .setContentText("要添購衛生紙")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+                .setCategory(NotificationCompat.CATEGORY_MESSAGE)
+                .build();
+        notificationManager.notify(1,notification);
     }
 }
 
