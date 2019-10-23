@@ -18,7 +18,7 @@ public class bg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bg);
-        //final EditText mPhoneNoEt = (EditText) findViewById(R.id.et_phone_no);
+       // final EditText mPhoneNoEt = (EditText) findViewById(R.id.et_phone_no);
         bm=(Button)findViewById(R.id.bm);
         bb=(Button)findViewById(R.id.bb);
         bq=(Button)findViewById(R.id.bq);
