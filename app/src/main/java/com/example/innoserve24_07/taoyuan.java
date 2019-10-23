@@ -35,7 +35,7 @@ public class taoyuan extends AppCompatActivity {
     //觸發間隔時間
     private static final int UPTATE_INTERVAL_TIME1= 200;
     private static final int UPTATE_INTERVAL_TIME = 100;
-
+    int flag=1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -120,27 +120,35 @@ public class taoyuan extends AppCompatActivity {
             mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
             // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
 
-            if (mSpeed >= SPEED_SHRESHOLD) {
-                // 達到搖一搖甩動後要做的事情
-                AlertDialog.Builder builder = new AlertDialog.Builder(taoyuan.this);
-                builder.setTitle("出大事!!")
-                        .setIcon(R.drawable.oldyeahhh)
-                        .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
-                        .setNegativeButton("我很好",null)
-                        .setCancelable(true)
-                        .show();
-                final AlertDialog dlg = builder.create();
-                dlg.show();
-                final Timer t = new Timer();
-                t.schedule(new TimerTask() {
-                    public void run() {
-                        String phoneNum="0925837969";
-                        callPhone(phoneNum);
-                        dlg.dismiss();
-                        t.cancel();
+                if (mSpeed >= SPEED_SHRESHOLD) {
+                    // 達到搖一搖甩動後要做的事情
+                    if(flag==1)
+                    {
+
+                        AlertDialog.Builder builder = new AlertDialog.Builder(taoyuan.this);
+                        builder.setTitle("出大事!!")
+                                .setIcon(R.drawable.oldyeahhh)
+                                .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
+                                .setNegativeButton("我很好",null)
+                                .setCancelable(true)
+                                .show();
+                        final AlertDialog dlg = builder.create();
+                        dlg.show();
+                        final Timer t = new Timer();
+                        t.schedule(new TimerTask() {
+                            public void run() {
+                                String phoneNum="0925837969";
+                                callPhone(phoneNum);
+                                dlg.dismiss();
+                                t.cancel();
+                            }
+                        }, 0);
+                        flag=0;
                     }
-                }, 5000);
-            }
+                    }
+
+
+
 
         }
 
