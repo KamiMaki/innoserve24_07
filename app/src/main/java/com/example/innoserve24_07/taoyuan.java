@@ -137,7 +137,7 @@ public class taoyuan extends AppCompatActivity {
                         final Timer t = new Timer();
                         t.schedule(new TimerTask() {
                             public void run() {
-                                String phoneNum="0925837969";
+                                String phoneNum="0978732031";
                                 callPhone(phoneNum);
                                 dlg.dismiss();
                                 t.cancel();
