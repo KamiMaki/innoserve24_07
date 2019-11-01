@@ -73,8 +73,6 @@ public class taoyuan extends AppCompatActivity {
     }
 
     public void callPhone(String phoneNum){
-
-        //android6版本获取动态权限
         if (Build.VERSION.SDK_INT >= 23) {
             int REQUEST_CODE_CONTACT = 101;
             String[] permissions = {Manifest.permission.CALL_PHONE};
