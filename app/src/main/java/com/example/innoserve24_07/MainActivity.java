@@ -1,5 +1,6 @@
 package com.example.innoserve24_07;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.app.Notification;
 import android.app.NotificationChannel;
@@ -8,9 +9,14 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.media.RingtoneManager;
 import android.net.Uri;
 
@@ -29,6 +35,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.os.Vibrator;
 
+import java.util.Timer;
+import java.util.TimerTask;
+
 import static com.example.innoserve24_07.pass_through.CHANNEL_1_ID;
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +52,20 @@ public class MainActivity extends AppCompatActivity {
     Button alarm;
     Button pass_through;
     private NotificationManagerCompat notificationManager;
-
+    private SensorManager mSensorManager;   //體感(Sensor)使用管理
+    private Sensor mSensor;                 //體感(Sensor)類別
+    private float mLastX;                    //x軸體感(Sensor)偏移
+    private float mLastY;                    //y軸體感(Sensor)偏移
+    private float mLastZ;                    //z軸體感(Sensor)偏移
+    private double mSpeed;                 //甩動力道數度
+    private long mLastUpdateTime;           //觸發時間
+    //甩動力道數度設定值 (數值越大需甩動越大力，數值越小輕輕甩動即會觸發)
+    private static final int SPEED_SHRESHOLD1 = 3000;
+    private static final int SPEED_SHRESHOLD= 4000;
+    //觸發間隔時間
+    private static final int UPTATE_INTERVAL_TIME1= 200;
+    private static final int UPTATE_INTERVAL_TIME = 100;
+    int flag=1;
     long[] vibrate = {0,100,200,300};
     Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
     /*private final static int NOTIFICATION_ID = 0;
@@ -205,6 +227,14 @@ public class MainActivity extends AppCompatActivity {
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+                mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+                mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+            }
+        });
+        /*weather.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
                 builder.setTitle("今天天氣晴\n溫度約27~30度")
                         .setIcon(R.drawable.oldyeahhh)
@@ -269,7 +299,7 @@ public class MainActivity extends AppCompatActivity {
                         .setNegativeButton("好",null)
                         .show();
             }
-        });
+        });*/
 
         pass_through = (Button)findViewById(R.id.pass_through);
         pass_through.setVisibility(View.VISIBLE);
@@ -286,6 +316,103 @@ public class MainActivity extends AppCompatActivity {
         Vibrator myVibrator = (Vibrator) getSystemService(Service.VIBRATOR_SERVICE);
         myVibrator.vibrate(time);
     }
+
+    public void callPhone(String phoneNum){
+
+        //android6版本获取动态权限
+        if (Build.VERSION.SDK_INT >= 23) {
+            int REQUEST_CODE_CONTACT = 101;
+            String[] permissions = {Manifest.permission.CALL_PHONE};
+            //验证是否许可权限
+            for (String str : permissions) {
+                if (this.checkSelfPermission(str) != PackageManager.PERMISSION_GRANTED) {
+                    //申请权限
+                    this.requestPermissions(permissions, REQUEST_CODE_CONTACT);
+                    return;
+                }
+            }
+        }
+        //如果需要手动拨号将Intent.ACTION_CALL改为Intent.ACTION_DIAL（跳转到拨号界面，用户手动点击拨打）
+        Intent intent = new Intent(Intent.ACTION_CALL);
+        Uri data = Uri.parse("tel:" + phoneNum);
+        intent.setData(data);
+        startActivity(intent);
+    }
+
+    private SensorEventListener callSensorListener = new SensorEventListener() {
+        public void onSensorChanged(SensorEvent mSensorEvent) {
+            // 當前觸發時間
+            long mCurrentUpdateTime = System.currentTimeMillis();
+            // 觸發間隔時間 = 當前觸發時間 - 上次觸發時間
+            long mTimeInterval = mCurrentUpdateTime - mLastUpdateTime;
+            // 若觸發間隔時間< 70 則return;
+            if (mTimeInterval < UPTATE_INTERVAL_TIME)
+                return;
+
+            mLastUpdateTime = mCurrentUpdateTime;
+            // 取得xyz體感(Sensor)偏移
+            float x = mSensorEvent.values[0];
+            float y = mSensorEvent.values[1];
+            float z = mSensorEvent.values[2];
+            // 甩動偏移速度 = xyz體感(Sensor)偏移 - 上次xyz體感(Sensor)偏移
+            float mDeltaX = x - mLastX;
+            float mDeltaY = y - mLastY;
+            float mDeltaZ = z - mLastZ;
+            mLastX = x;
+            mLastY = y;
+            mLastZ = z;
+            // 體感(Sensor)甩動力道速度公式
+            mSpeed = Math.sqrt(mDeltaX * mDeltaX + mDeltaY * mDeltaY + mDeltaZ * mDeltaZ) / mTimeInterval * 10000;
+            // 若體感(Sensor)甩動速度大於等於甩動設定值則進入 (達到甩動力道及速度)
+
+            if (mSpeed >= SPEED_SHRESHOLD) {
+                // 達到搖一搖甩動後要做的事情
+                if(flag==1)
+                {
+
+                    AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                    builder.setTitle("出大事!!")
+                            .setIcon(R.drawable.oldyeahhh)
+                            .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
+                            .setNegativeButton("我很好",null)
+                            .setCancelable(true)
+                            .show();
+                    final AlertDialog dia = builder.create();
+                    dia.show();
+                    final Timer t1 = new Timer();
+                    t1.schedule(new TimerTask() {
+                        public void run() {
+                            String phoneNum="0978732031";
+                            callPhone(phoneNum);
+                            dia.dismiss();
+                            t1.cancel();
+                        }
+                    }, 0);
+                    final AlertDialog dlg = builder.create();
+                    dlg.show();
+                    final Timer t = new Timer();
+                    t.schedule(new TimerTask() {
+                        public void run() {
+                            Intent intent1 = new Intent();
+                            intent1.setClass(MainActivity.this, MainActivity.class);
+                            startActivity(intent1);
+                            finish();
+                            dlg.dismiss();
+                            t.cancel();
+                        }
+                    }, 13000);
+                    flag=0;
+                }
+            }
+
+
+
+
+        }
+
+        public void onAccuracyChanged(Sensor sensor, int accuracy) {
+        }
+    };
 
     public void sendOnChannel1(View v ){
         try {
