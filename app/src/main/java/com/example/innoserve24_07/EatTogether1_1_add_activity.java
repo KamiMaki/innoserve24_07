@@ -18,7 +18,7 @@ import android.widget.Toast;
 import java.util.Calendar;
 
 public class EatTogether1_1_add_activity extends AppCompatActivity {
-    private EditText editDate;
+    private TextView editDate;
     private Button dateButton;
     private TextView dateText;
     private TextView listText;
@@ -37,7 +37,7 @@ public class EatTogether1_1_add_activity extends AppCompatActivity {
                 EatTogether1_1_add_activity.this.finish();
             }
         });*/
-        editDate=(EditText)findViewById(R.id.editDate);
+        editDate=(TextView)findViewById(R.id.editDate);
         dateText = (TextView)findViewById(R.id.dateText);
         dateButton = (Button)findViewById(R.id.dateButton);
         dateButton.setOnClickListener(new View.OnClickListener(){

@@ -82,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
         bt3 = (Button)findViewById(R.id.bt3);
         bt4 = (Button)findViewById(R.id.bt4);
         bt5 = (Button)findViewById(R.id.bt5);
-
         notificationManager=NotificationManagerCompat.from(this);
         // notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
@@ -227,9 +226,40 @@ public class MainActivity extends AppCompatActivity {
         weather.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
+                AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+                builder.setTitle("出大事!!")
+                        .setIcon(R.drawable.oldyeahhh)
+                        .setMessage("偵測到您有跌倒\n請於 5秒 內回報是否安好\n如果沒有將自動撥打給緊急聯絡人")
+                        .setNegativeButton("我很好",null)
+                        .setCancelable(true)
+                        .show();
+                final AlertDialog dia = builder.create();
+                dia.show();
+                final Timer t1 = new Timer();
+                t1.schedule(new TimerTask() {
+                    public void run() {
+                        String phoneNum="0978732031";
+                        callPhone(phoneNum);
+                        dia.dismiss();
+                        t1.cancel();
+                    }
+                }, 0);
+                final AlertDialog dlg = builder.create();
+                dlg.show();
+                final Timer t = new Timer();
+                t.schedule(new TimerTask() {
+                    public void run() {
+                        Intent intent1 = new Intent();
+                        intent1.setClass(MainActivity.this, MainActivity.class);
+                        startActivity(intent1);
+                        finish();
+                        dlg.dismiss();
+                        t.cancel();
+                    }
+                }, 13000);
+               /*mSensorManager = (SensorManager)getSystemService(SENSOR_SERVICE);
                 mSensor = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-                mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);
+                mSensorManager.registerListener(callSensorListener, mSensor,SensorManager.SENSOR_DELAY_GAME);*/
             }
         });
         /*weather.setOnClickListener(new View.OnClickListener() {

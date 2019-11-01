@@ -7,15 +7,6 @@
     android:background="@drawable/back3"
     tools:context=".EatTogether1_1_add_activity">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:text="新增一個活動"
-        android:textSize="40sp"
-        tools:layout_editor_absoluteX="86dp" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -25,11 +16,20 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp" />
+            android:layout_height="30dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="94dp"
+            android:layout_gravity="center"
+            android:text="新增一個活動"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="40sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:orientation="horizontal">
 
             <TextView
@@ -38,24 +38,37 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="活動地點"
-                android:textSize="25sp" />
-
-            <TextView
-                android:id="@+id/listText"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:text=""
-                android:textSize="15sp" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="22sp" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="150dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/listText"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="14sp" />
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/listButton"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
 
                 android:text="挑選地點"
                 android:textSize="15sp" />
@@ -64,7 +77,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:orientation="horizontal">
 
             <TextView
@@ -73,26 +86,46 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="活動名稱"
-                android:textSize="25sp" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/activity"
-                android:layout_width="wrap_content"
+
+            <Space
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:textSize="15sp" />
+                android:layout_weight="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="150dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/activity"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:text=""
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
 
             <Button
                 android:id="@+id/actbt"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:text="挑選活動" />
+                android:layout_height="wrap_content"
+                android:text="挑選活動"
+                android:textSize="15sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:orientation="horizontal">
 
             <TextView
@@ -101,25 +134,40 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="活動日期"
-                android:textSize="25sp" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="22sp" />
 
-            <EditText
-                android:id="@+id/editDate"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:textSize="15sp" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="150dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/editDate"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/datePicker"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:onClick="datePicker"
                 android:text="挑選日期"
                 android:textSize="15sp" />
@@ -128,7 +176,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             tools:layout_editor_absoluteY="97dp">
 
@@ -138,23 +186,38 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="活動時間"
-                android:textSize="25sp" />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="22sp" />
 
-            <TextView
-                android:id="@+id/dateText"
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:textSize="15sp" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Space
+                    android:layout_width="150dp"
+                    android:layout_height="20dp" />
+
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                    android:textSize="18sp" />
+
+
+            </LinearLayout>
+
             <Button
                 android:id="@+id/dateButton"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="挑選時間"
                 android:textSize="15sp" />
@@ -162,7 +225,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:orientation="horizontal"
             tools:layout_editor_absoluteX="190dp">
 
@@ -172,16 +235,15 @@
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="活動內容"
-                android:textSize="25sp"
-                />
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
+                android:textSize="22sp" />
 
             <EditText
                 android:id="@+id/editText2"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
                 android:ems="10"
-                android:inputType="textPersonName"
-                />
+                android:inputType="textPersonName" />
         </LinearLayout>
 
         <Button

@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="杜爺爺：\n我會帶三杯雞"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="36sp" />
 
             <TextView
@@ -34,13 +35,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="鄭奶奶：\n我會帶地瓜葉"
-                android:textSize="36sp" />
-
-            <TextView
-                android:id="@+id/textView02"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="陳奶奶：\n我負責帶冰淇淋"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="36sp" />
 
             <TextView
@@ -48,13 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="溫爺爺：\n我帶山豬肉"
-                android:textSize="36sp" />
-
-            <TextView
-                android:id="@+id/textView04"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="吳爺爺：\n我會帶糖醋肉"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="36sp" />
 
             <TextView
@@ -62,12 +51,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="李奶奶：\n我帶鮮蝦冬粉煲"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="36sp" />
 
             <TextView
                 android:id="@+id/tv"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:textColor="@color/common_google_signin_btn_text_dark_focused"
                 android:textSize="36sp" />
 
         </LinearLayout>
@@ -76,8 +67,9 @@
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
-        android:layout_height="45dp"
+        android:layout_height="wrap_content"
         android:text="聊天室"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

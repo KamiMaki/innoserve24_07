@@ -48,10 +48,13 @@ public class layout2_1_point_market extends AppCompatActivity {
             if(v.getId()==R.id.rice){
                 if(point>=30)
                 {
+                    ImageView imageView = new ImageView(layout2_1_point_market.this);
+                    imageView.setImageResource(R.drawable.code38);
                     AlertDialog.Builder builder = new AlertDialog.Builder(layout2_1_point_market.this);
                     builder.setTitle("請示出條碼")
                             .setIcon(R.drawable.oldyeahhh)
                             .setMessage("池上米:30點")
+                            .setView(imageView)
                             .setNegativeButton("關閉", null)
                             .show();
                     point-=30;
